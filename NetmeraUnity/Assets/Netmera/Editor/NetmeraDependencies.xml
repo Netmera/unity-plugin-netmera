@@ -1,0 +1,26 @@
+<dependencies>
+    <iosPods>
+        <iosPod name="Netmera" version="~> 3.12.0" minTargetSdk="10.0">
+        </iosPod>
+    </iosPods>
+    <androidPackages>
+        <!--
+         TODO by app developer:
+         //must be add the bottom of app's build gradle
+            apply plugin: 'com.google.gms.google-services'
+            apply plugin: 'com.huawei.agconnect'
+         -->
+        
+        
+        <androidPackage spec="com.netmera:netmera:3.8.7"/>
+        <androidPackage spec="com.google.firebase:firebase-core:18.0.2"/>
+        <androidPackage spec="com.google.firebase:firebase-messaging:21.0.1"/>
+        <androidPackage spec="com.google.firebase:firebase-analytics:18.0.2"/>
+        <!-- <androidPackage spec="com.google.android.gms:play-services-location:16.0.0"/> Optional -->
+        <repositories>
+            <repository>http://release.netmera.com/release/android</repository>
+            <repository>https://maven.google.com</repository>
+            <repository>http://developer.huawei.com/repo</repository>
+        </repositories>
+    </androidPackages>
+</dependencies>

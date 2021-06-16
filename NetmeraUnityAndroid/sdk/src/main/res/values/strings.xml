@@ -1,0 +1,8 @@
+<resources>
+    <bool name="netmera_use_default_push_receiver">false</bool>
+    <bool name="netmera_use_default_deeplink_action">true</bool>
+    <bool name="netmera_logging_disabled">false</bool>
+    <bool name="netmera_popup_presentation_disabled">true</bool>
+
+
+</resources>

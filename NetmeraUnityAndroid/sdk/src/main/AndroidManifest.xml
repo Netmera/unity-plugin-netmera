@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.netmera.unity.sdk">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application>
+        <receiver
+            android:name="com.netmera.unity.sdk.core.NetmeraPluginPushReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.netmera.push.intent.REGISTER" />
+                <action android:name="com.netmera.push.intent.RECEIVE" />
+                <action android:name="com.netmera.push.intent.OPEN" />
+                <action android:name="com.netmera.push.intent.DISMISS" />
+                <action android:name="com.netmera.push.intent.BUTTON" />
+                <action android:name="com.netmera.push.intent.carousel.OPEN" />
+                <action android:name="com.netmera.push.intent.carousel.PREV" />
+                <action android:name="com.netmera.push.intent.carousel.NEXT" />
+                <action android:name="com.netmera.push.intent.carousel.ITEM" />
+            </intent-filter>
+        </receiver>
+
+        <meta-data
+            android:name="firebase_messaging_auto_init_enabled"
+            android:value="false" />
+        <meta-data
+            android:name="firebase_analytics_collection_enabled"
+            android:value="false" />
+
+    </application>
+</manifest>

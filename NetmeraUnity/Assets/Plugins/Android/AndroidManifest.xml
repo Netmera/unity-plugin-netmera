@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" package="com.netmera.unity.plugin" android:versionCode="1"
+          android:versionName="1.0">
+
+    <!-- 
+    OPTIONAL <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/> 
+    
+    <uses-feature
+      android:name="android.hardware.location"
+      android:required="false" />
+    <uses-feature
+      android:name="android.hardware.location.gps"
+      android:required="false" />
+    -->
+
+    <uses-permission android:name="android.permission.VIBRATE" /> <!-- Vibration is also optional. So you can remove that line -->
+    
+    <application android:name="com.netmera.unity.sdk.core.NetmeraCustomApp">
+
+        <activity android:name="com.google.firebase.MessagingUnityPlayerActivity"
+                  android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="unityplayer.UnityActivity" android:value="true"/>
+        </activity>
+        
+        <service android:name="com.google.firebase.messaging.MessageForwardingService" android:exported="false"/>
+         <meta-data
+                android:name="netmera_mobile_sdkkey"
+                android:value="GssT_cQQM8eKJT6BGOv4Lbiz-P7lj9cb8IO3zBuWbAiAxf1gqwLiwQ"/>
+        <meta-data
+                android:name="netmera_firebase_senderid"
+                android:value="625026371683"/>
+
+        <meta-data
+                android:name="netmera_optional_baseurl"
+                android:value=""/>
+        <meta-data
+                android:name="netmera_logging_disabled"
+                android:value="false"/>
+        <meta-data
+                android:name="netmera_popup_presentation_disabled"
+                android:value="false"/>
+
+    </application>
+</manifest>

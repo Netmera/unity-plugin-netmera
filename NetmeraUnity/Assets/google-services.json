@@ -1,0 +1,90 @@
+{
+  "project_info": {
+    "project_number": "625026371683",
+    "project_id": "netmeraplugin",
+    "storage_bucket": "netmeraplugin.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:625026371683:android:0232e9aa5e20e1833a2856",
+        "android_client_info": {
+          "package_name": "com.netmera.unity.plugin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "625026371683-sm86cj3koobburs6p6fkpcuvee2idp35.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.netmera.unity.plugin",
+            "certificate_hash": "412bd27e3611c7b76c61946799067c7fdde6c2b5"
+          }
+        },
+        {
+          "client_id": "625026371683-csigc35vdn4vfpieh3ha1bdjbprbmk8d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHluHGV1COXeAXIeAjZ9xjjAwJQ1HhTXU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "625026371683-csigc35vdn4vfpieh3ha1bdjbprbmk8d.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "625026371683-6nktlffhlcispd8guse8hu72e9g7946t.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.test.netmera.unity"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:625026371683:android:b0c1aceeb3e8b0e73a2856",
+        "android_client_info": {
+          "package_name": "com.test.netmera.unity"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "625026371683-csigc35vdn4vfpieh3ha1bdjbprbmk8d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHluHGV1COXeAXIeAjZ9xjjAwJQ1HhTXU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "625026371683-csigc35vdn4vfpieh3ha1bdjbprbmk8d.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "625026371683-6nktlffhlcispd8guse8hu72e9g7946t.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.test.netmera.unity"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
