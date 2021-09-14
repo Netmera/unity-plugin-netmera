@@ -1,0 +1,333 @@
+Using pre-set license
+Built from '2020.3/staging' branch; Version is '2020.3.5f1 (8095aa901b9b) revision 8426922'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Home Single Language; OS build 19042.1165; Version 2009; 64bit' Language: 'en' Physical Memory: 15741 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+D:\UnityEditors\2020.3.5f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+D:/SharedFolder/Workspaces/personal/unity/unity-plugin-netmera/NetmeraUnity
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+62441
+Successfully changed project path to: D:/SharedFolder/Workspaces/personal/unity/unity-plugin-netmera/NetmeraUnity
+D:/SharedFolder/Workspaces/personal/unity/unity-plugin-netmera/NetmeraUnity
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 32.32 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.5f1 (8095aa901b9b)
+[Subsystems] Discovering subsystems at path D:/UnityEditors/2020.3.5f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/SharedFolder/Workspaces/personal/unity/unity-plugin-netmera/NetmeraUnity/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: AMD Radeon(TM) Graphics (ID=0x1636)
+    Vendor:   
+    VRAM:     7870 MB
+    Driver:   27.20.11022.14001
+Initialize mono
+Mono path[0] = 'D:/UnityEditors/2020.3.5f1/Editor/Data/Managed'
+Mono path[1] = 'D:/UnityEditors/2020.3.5f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'D:/UnityEditors/2020.3.5f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56236
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/UnityEditors/2020.3.5f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001195 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 23.42 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.022 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.005780 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.48 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.881 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 0.44 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1100 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 57.3 MB.
+System memory in use after: 57.4 MB.
+
+Unloading 46 unused Assets to reduce memory usage. Loaded Objects now: 1518.
+Total: 1.935100 ms (FindLiveObjects: 0.177000 ms CreateObjectMapping: 0.037400 ms MarkObjects: 1.623000 ms  DeleteObjects: 0.095800 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Netmera/Demo
+  artifactKey: Guid(7c171709e0552804294a642a9ef7105b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Netmera/Demo using Guid(7c171709e0552804294a642a9ef7105b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bdd2d3272d81af69f5f609aae72ab4fc') in 0.010268 seconds
+  Import took 0.012955 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003911 seconds.
+  path: Assets/Netmera/Demo/NetmeraDemoScene.unity
+  artifactKey: Guid(1149ea84847d7964ea5b82729bb482bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Netmera/Demo/NetmeraDemoScene.unity using Guid(1149ea84847d7964ea5b82729bb482bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4d581e8bc48951a86fa3caf95afe911d') in 0.016543 seconds
+  Import took 0.018449 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002628 seconds.
+  path: Assets/Netmera/Source/common/entity/JSONObject.cs
+  artifactKey: Guid(f7ab19403c4058b479d9de148a28c478) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Netmera/Source/common/entity/JSONObject.cs using Guid(f7ab19403c4058b479d9de148a28c478) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3be9496f26a04b4bc7c4aa6bea03dbd7') in 0.024848 seconds
+  Import took 0.026649 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002283 seconds.
+  path: Assets/Netmera/Source/common
+  artifactKey: Guid(137b5e670f56c0b469e8a6990201c99f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Netmera/Source/common using Guid(137b5e670f56c0b469e8a6990201c99f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa2650570a77b48bc51c6547ed1d41f8') in 0.007729 seconds
+  Import took 0.009650 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003451 seconds.
+  path: Assets/Netmera/Source/ios/NetmeraPlugin.cs
+  artifactKey: Guid(122d56e092fa3463d99b177ec47d786e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Netmera/Source/ios/NetmeraPlugin.cs using Guid(122d56e092fa3463d99b177ec47d786e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '63d4026387e8c2770760b77cce555133') in 0.008331 seconds
+  Import took 0.010212 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003076 seconds.
+  path: Assets/Plugins/iOS/Netmera/FNetmeraUser.h
+  artifactKey: Guid(40989f44984b24906a92aaf33cd7f333) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/iOS/Netmera/FNetmeraUser.h using Guid(40989f44984b24906a92aaf33cd7f333) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9782f58b21ad984258139f0eb8c35e4d') in 0.017191 seconds
+  Import took 0.019861 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002480 seconds.
+  path: Assets/Plugins/iOS/Netmera/FNetmeraAppDelegate.h
+  artifactKey: Guid(ecd589cb4d9264fdd8926a1a384b48fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/iOS/Netmera/FNetmeraAppDelegate.h using Guid(ecd589cb4d9264fdd8926a1a384b48fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8375859d562adffa40593069a694bc28') in 0.007998 seconds
+  Import took 0.010327 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.005963 seconds.
+  path: Assets/Plugins/iOS/Netmera/FNetmeraEvent.h
+  artifactKey: Guid(aa68c6d5a1aa349d6a1667f5b5998a50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/iOS/Netmera/FNetmeraEvent.h using Guid(aa68c6d5a1aa349d6a1667f5b5998a50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e145e578e3837f3f4b0479dc36b987ea') in 0.008693 seconds
+  Import took 0.010812 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002014 seconds.
+  path: Assets/Netmera/Source/android
+  artifactKey: Guid(61c2c21f9654b284184b0ee763eee838) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Netmera/Source/android using Guid(61c2c21f9654b284184b0ee763eee838) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09c9bc7e92840c6a0652932b72319987') in 0.007292 seconds
+  Import took 0.009518 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001950 seconds.
+  path: Assets/Plugins/Android
+  artifactKey: Guid(4a8120ad0a59aeb468bc35b0485080f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Android using Guid(4a8120ad0a59aeb468bc35b0485080f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a20278fc461780f3af8141c8e4da5cfd') in 0.006853 seconds
+  Import took 0.009270 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001917 seconds.
+  path: Assets/Netmera/Demo/Prefabs
+  artifactKey: Guid(09decc1229192c24cb1c87dba3dc0730) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Netmera/Demo/Prefabs using Guid(09decc1229192c24cb1c87dba3dc0730) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'db5ef8bad028563cc2b71a0b344b3655') in 0.006346 seconds
+  Import took 0.008219 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.005580 seconds.
+  path: Assets/Netmera/Editor/NetmeraDependencies.xml
+  artifactKey: Guid(6a33f62b724f3b44f85d4b0ee9c27def) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Netmera/Editor/NetmeraDependencies.xml using Guid(6a33f62b724f3b44f85d4b0ee9c27def) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '828c73c8199f5cff3edeb8e73abdc9b9') in 0.010944 seconds
+  Import took 0.012868 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002585 seconds.
+  path: Assets/Plugins/iOS/Netmera/NetmeraPlugin.h
+  artifactKey: Guid(25b3e58d37a89441aba218598b182cd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/iOS/Netmera/NetmeraPlugin.h using Guid(25b3e58d37a89441aba218598b182cd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f08d4e9b9c8c6d6884f933713e5ebb47') in 0.003412 seconds
+  Import took 0.005815 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002760 seconds.
+  path: Assets/Plugins/iOS/Netmera/FNetmeraUser.m
+  artifactKey: Guid(f17ac774c81cb47c899452f54a2ab8d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/iOS/Netmera/FNetmeraUser.m using Guid(f17ac774c81cb47c899452f54a2ab8d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd55feae62e3fe86d3d33721cd963ea62') in 0.004609 seconds
+  Import took 0.006546 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002449 seconds.
+  path: Assets/Plugins/iOS/Netmera/NetmeraPlugin.mm
+  artifactKey: Guid(b0a35b268fe504732ba0bb703a4edd70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/iOS/Netmera/NetmeraPlugin.mm using Guid(b0a35b268fe504732ba0bb703a4edd70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '501ac28ad9fcdddf7bb4993ed151c176') in 0.005111 seconds
+  Import took 0.006946 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.005724 seconds.
+  path: Assets/Netmera/Source/common/NetmeraCore.cs
+  artifactKey: Guid(613bb58380fcc0d4a8528ed14550158b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Netmera/Source/common/NetmeraCore.cs using Guid(613bb58380fcc0d4a8528ed14550158b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93d6fddee9eebce17d380861d346febe') in 0.007630 seconds
+  Import took 0.009744 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002328 seconds.
+  path: Assets/Netmera/Source/common/entity
+  artifactKey: Guid(045b525485ad0ea42a161563566cf9c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Netmera/Source/common/entity using Guid(045b525485ad0ea42a161563566cf9c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd5c06ca23313a7013a176690291fab70') in 0.007818 seconds
+  Import took 0.010205 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002721 seconds.
+  path: Assets/Netmera/Demo/Prefabs/NetmeraManager.prefab
+  artifactKey: Guid(c64e59584b99d034d9f3de92e1af202e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Netmera/Demo/Prefabs/NetmeraManager.prefab using Guid(c64e59584b99d034d9f3de92e1af202e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '757d5047df4eb2f434a65f66291f61ef') in 0.022395 seconds
+  Import took 0.024679 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002080 seconds.
+  path: Assets/Netmera/Source/ios
+  artifactKey: Guid(5528c6670f802bd419c3ccbab19ded3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Netmera/Source/ios using Guid(5528c6670f802bd419c3ccbab19ded3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca8fe61cb77bbab7dc07d2fe6bcaf267') in 0.006629 seconds
+  Import took 0.008497 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001953 seconds.
+  path: Assets/Netmera/Editor
+  artifactKey: Guid(912e289b83028214ba173ba6f14cca34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Netmera/Editor using Guid(912e289b83028214ba173ba6f14cca34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d219c06abb62bdcd226e8ba0ae7a9ed') in 0.006886 seconds
+  Import took 0.008888 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001924 seconds.
+  path: Assets/Plugins/iOS/Netmera
+  artifactKey: Guid(bddf7ad7a24ec4f80b9fef28dca61eed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/iOS/Netmera using Guid(bddf7ad7a24ec4f80b9fef28dca61eed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f23c1c11f7a09479ac5865c6d57041f') in 0.006502 seconds
+  Import took 0.008611 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002083 seconds.
+  path: Assets/Netmera/Source
+  artifactKey: Guid(6d4936baa1c3b174babd8dc9b33a5182) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Netmera/Source using Guid(6d4936baa1c3b174babd8dc9b33a5182) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '58d3606572cf30d18ab35d5b08517e48') in 0.007191 seconds
+  Import took 0.009175 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002773 seconds.
+  path: Assets/Netmera/Source/common/Callback.cs
+  artifactKey: Guid(c379e2cdfc722f9488bcc835d6d47376) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Netmera/Source/common/Callback.cs using Guid(c379e2cdfc722f9488bcc835d6d47376) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'abc9ae7849609be9490d95133c8ec418') in 0.007056 seconds
+  Import took 0.009122 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002625 seconds.
+  path: Assets/Plugins/Android/netmerasdk_unity_1.0.0.aar
+  artifactKey: Guid(f7a68b1d6e67a43fcbf3fa9c72f75aac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Android/netmerasdk_unity_1.0.0.aar using Guid(f7a68b1d6e67a43fcbf3fa9c72f75aac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '37c2aaa81d616d5f24708cb271b24103') in 0.008615 seconds
+  Import took 0.010641 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002563 seconds.
+  path: Assets/Plugins/iOS/Netmera/FNetmeraEvent.m
+  artifactKey: Guid(f641807d2003a48488e58e00d93b5d50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/iOS/Netmera/FNetmeraEvent.m using Guid(f641807d2003a48488e58e00d93b5d50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a96590604510c7961c2aead032e9b21') in 0.002831 seconds
+  Import took 0.004709 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.005236 seconds.
+  path: Assets/Plugins/iOS/Netmera/FNetmeraAppDelegate.m
+  artifactKey: Guid(c5a30495ae10c4ee49d580d83227be70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/iOS/Netmera/FNetmeraAppDelegate.m using Guid(c5a30495ae10c4ee49d580d83227be70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7463d33cdae0ae18e2b673560af7ac6c') in 0.002960 seconds
+  Import took 0.005112 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001665 seconds.
+  path: Assets/Netmera
+  artifactKey: Guid(4961dc06160342845b32595b55e3df8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Netmera using Guid(4961dc06160342845b32595b55e3df8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b1353ab0172126f5d8310852dbe0ab52') in 0.002785 seconds
+  Import took 0.004647 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002330 seconds.
+  path: Assets/Netmera/Source/android/NetmeraPluginImpl.cs
+  artifactKey: Guid(5641ff2ef593530439f75531f60091c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Netmera/Source/android/NetmeraPluginImpl.cs using Guid(5641ff2ef593530439f75531f60091c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c6acbf5e001260650c13c3dde2939691') in 0.006550 seconds
+  Import took 0.008765 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002316 seconds.
+  path: Assets/Netmera/Source/ios/NetmeraIosCallback.cs
+  artifactKey: Guid(7a2afa31fc16a46788004a83146ba8b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Netmera/Source/ios/NetmeraIosCallback.cs using Guid(7a2afa31fc16a46788004a83146ba8b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc558c60befb655f54f96ff70362467c') in 0.006951 seconds
+  Import took 0.008818 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002332 seconds.
+  path: Assets/Netmera/Demo/NetmeraGameObject.cs
+  artifactKey: Guid(76ee4b20acb6c0b4086738b3b9d305e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Netmera/Demo/NetmeraGameObject.cs using Guid(76ee4b20acb6c0b4086738b3b9d305e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6f0453919e626e84fe6c1daf66242c1') in 0.006966 seconds
+  Import took 0.009128 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 91.124625 seconds.
+  path: Assets/Netmera/Editor/NetmeraDependencies.xml
+  artifactKey: Guid(6a33f62b724f3b44f85d4b0ee9c27def) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Netmera/Editor/NetmeraDependencies.xml using Guid(6a33f62b724f3b44f85d4b0ee9c27def) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b7b4608b3a28d3cd53f5930d863ba395') in 0.003938 seconds
+  Import took 0.006349 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.009878 seconds.
+  path: Assets/Plugins/iOS
+  artifactKey: Guid(a1f828819f584a04aae7d291d27757bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/iOS using Guid(a1f828819f584a04aae7d291d27757bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c12edbd1043481749bea508174ca8071') in 0.009060 seconds
+  Import took 0.011274 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.044516 seconds.
+  path: Assets/Plugins
+  artifactKey: Guid(9d2cf1743a08fc1419116f85b2dde42e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins using Guid(9d2cf1743a08fc1419116f85b2dde42e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a1521670bd2d1a065bfc47d828cc649') in 0.009225 seconds
+  Import took 0.011848 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file

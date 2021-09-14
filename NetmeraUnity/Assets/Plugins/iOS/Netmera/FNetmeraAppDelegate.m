@@ -34,13 +34,12 @@ static NSData *lastPush;
 }
 
 - (BOOL)application:(UIApplication*)application customDidFinishLaunchingWithOptions:(NSDictionary*)launchOptions {
+    [self application:application customDidFinishLaunchingWithOptions:launchOptions];
+    
     [FNetmeraPlugin NMLog:@"customDidFinishLaunchingWithOptions"];
     [UNUserNotificationCenter currentNotificationCenter].delegate = self;
     initNetmeraAuto(launchOptions);
-    
-    if ([self respondsToSelector:@selector(application:didFinishLaunchingWithOptions:)])
-        return [self application:application customDidFinishLaunchingWithOptions:launchOptions];
-    
+ 
     return YES;
 }
 
