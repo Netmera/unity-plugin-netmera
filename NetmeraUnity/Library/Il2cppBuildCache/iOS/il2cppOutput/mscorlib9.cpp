@@ -30272,7 +30272,7 @@ IL_0067:
 		__this->set__tail_2(0);
 		__this->set__size_3(0);
 		float L_16 = ___growFactor1;
-		__this->set__growFactor_4(((int32_t)((int32_t)((float)il2cpp_codegen_multiply((float)L_16, (float)(100.0f))))));
+		__this->set__growFactor_4(il2cpp_codegen_cast_double_to_int<int32_t>(((float)il2cpp_codegen_multiply((float)L_16, (float)(100.0f)))));
 		return;
 	}
 }
@@ -31677,7 +31677,7 @@ IL_0027:
 		double L_5;
 		L_5 = VirtFuncInvoker0< double >::Invoke(4 /* System.Double System.Random::Sample() */, __this);
 		int32_t L_6 = ___maxValue0;
-		return ((int32_t)((int32_t)((double)il2cpp_codegen_multiply((double)L_5, (double)((double)((double)L_6))))));
+		return il2cpp_codegen_cast_double_to_int<int32_t>(((double)il2cpp_codegen_multiply((double)L_5, (double)((double)((double)L_6)))));
 	}
 }
 #ifdef __clang__

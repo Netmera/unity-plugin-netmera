@@ -25803,7 +25803,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Convert_ToInt32_m02AB1E28E0CF98A2F89E
 	}
 	{
 		double L_2 = ___value0;
-		V_0 = ((int32_t)((int32_t)L_2));
+		V_0 = il2cpp_codegen_cast_double_to_int<int32_t>(L_2);
 		double L_3 = ___value0;
 		int32_t L_4 = V_0;
 		V_1 = ((double)il2cpp_codegen_subtract((double)L_3, (double)((double)((double)L_4))));
@@ -25850,7 +25850,7 @@ IL_0043:
 	}
 	{
 		double L_11 = ___value0;
-		V_2 = ((int32_t)((int32_t)L_11));
+		V_2 = il2cpp_codegen_cast_double_to_int<int32_t>(L_11);
 		double L_12 = ___value0;
 		int32_t L_13 = V_2;
 		V_3 = ((double)il2cpp_codegen_subtract((double)L_12, (double)((double)((double)L_13))));
@@ -26493,7 +26493,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t Convert_ToInt64_m72C3430B5EAFCA595203
 		double L_1;
 		L_1 = bankers_round(L_0);
 		if (L_1 > (double)((std::numeric_limits<int64_t>::max)())) IL2CPP_RAISE_MANAGED_EXCEPTION(il2cpp_codegen_get_overflow_exception(), Convert_ToInt64_m72C3430B5EAFCA5952038A56340DAF4E5D8A2908_RuntimeMethod_var);
-		return ((int64_t)((int64_t)L_1));
+		return il2cpp_codegen_cast_double_to_int<int64_t>(L_1);
 	}
 }
 // System.Int64 System.Convert::ToInt64(System.Decimal)
@@ -32058,7 +32058,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CrossContextChannel__ctor_m959C9981BAA45
 IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_CrossContextDelegate_t12C7A08ED124090185A3E209E6CA9E28148A7682 (CrossContextDelegate_t12C7A08ED124090185A3E209E6CA9E28148A7682 * __this, const RuntimeMethod* method)
 {
 	typedef void (DEFAULT_CALL *PInvokeFunc)();
-	PInvokeFunc il2cppPInvokeFunc = reinterpret_cast<PInvokeFunc>(il2cpp_codegen_get_method_pointer(((RuntimeDelegate*)__this)->method));
+	PInvokeFunc il2cppPInvokeFunc = reinterpret_cast<PInvokeFunc>(((RuntimeDelegate*)__this)->method->nativeFunction);
 
 	// Native function invocation
 	il2cppPInvokeFunc();

@@ -12505,7 +12505,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Timer__ctor_mBD6FACD80C380691A80EF0846CD
 		L_2 = TimeSpan_get_TotalMilliseconds_m97368AE0609D865EB2A6BAE96AAA97AF8BDBF1C5((TimeSpan_t4F6A0E13E703B65365CFCAB58E05EE0AF3EE6203 *)(&___dueTime2), /*hidden argument*/NULL);
 		double L_3;
 		L_3 = TimeSpan_get_TotalMilliseconds_m97368AE0609D865EB2A6BAE96AAA97AF8BDBF1C5((TimeSpan_t4F6A0E13E703B65365CFCAB58E05EE0AF3EE6203 *)(&___period3), /*hidden argument*/NULL);
-		Timer_Init_m1EBA86AE7CF4697EA216756A9BC8295989515428(__this, L_0, L_1, ((int64_t)((int64_t)L_2)), ((int64_t)((int64_t)L_3)), /*hidden argument*/NULL);
+		Timer_Init_m1EBA86AE7CF4697EA216756A9BC8295989515428(__this, L_0, L_1, il2cpp_codegen_cast_double_to_int<int64_t>(L_2), il2cpp_codegen_cast_double_to_int<int64_t>(L_3), /*hidden argument*/NULL);
 		return;
 	}
 }
@@ -12547,7 +12547,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Timer_Change_mF0EB40167FCF8AE930A7AF6B5F
 		double L_1;
 		L_1 = TimeSpan_get_TotalMilliseconds_m97368AE0609D865EB2A6BAE96AAA97AF8BDBF1C5((TimeSpan_t4F6A0E13E703B65365CFCAB58E05EE0AF3EE6203 *)(&___period1), /*hidden argument*/NULL);
 		bool L_2;
-		L_2 = Timer_Change_m384EE21E270FBBA9EE8D16705BFC1205FB3FCD25(__this, ((int64_t)((int64_t)L_0)), ((int64_t)((int64_t)L_1)), (bool)0, /*hidden argument*/NULL);
+		L_2 = Timer_Change_m384EE21E270FBBA9EE8D16705BFC1205FB3FCD25(__this, il2cpp_codegen_cast_double_to_int<int64_t>(L_0), il2cpp_codegen_cast_double_to_int<int64_t>(L_1), (bool)0, /*hidden argument*/NULL);
 		return L_2;
 	}
 }

@@ -18353,7 +18353,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool MultipleDisplayUtilities_GetRelativeMous
 		// int currentDisplayIndex = (int)relativePosition.z;
 		Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E  L_7 = V_1;
 		float L_8 = L_7.get_z_4();
-		V_2 = ((int32_t)((int32_t)L_8));
+		V_2 = il2cpp_codegen_cast_double_to_int<int32_t>(L_8);
 		// if (currentDisplayIndex != pressDisplayIndex)
 		int32_t L_9 = V_2;
 		int32_t L_10 = V_0;
@@ -19816,7 +19816,7 @@ IL_0016:
 		NullCheck(L_2);
 		float L_3;
 		L_3 = Camera_get_depth_m063B48665DB9226949AC3A615362EA20193B823D(L_2, /*hidden argument*/NULL);
-		G_B3_0 = ((int32_t)((int32_t)L_3));
+		G_B3_0 = il2cpp_codegen_cast_double_to_int<int32_t>(L_3);
 	}
 
 IL_0022:
@@ -20020,7 +20020,7 @@ IL_0018:
 		int32_t* L_11 = ___eventDisplayIndex2;
 		Vector3_t65B972D6A585A0A5B63153CF1177A90D3C90D65E  L_12 = V_0;
 		float L_13 = L_12.get_z_4();
-		*((int32_t*)L_11) = (int32_t)((int32_t)((int32_t)L_13));
+		*((int32_t*)L_11) = (int32_t)il2cpp_codegen_cast_double_to_int<int32_t>(L_13);
 		// if (eventDisplayIndex != eventCamera.targetDisplay)
 		int32_t* L_14 = ___eventDisplayIndex2;
 		int32_t L_15 = *((int32_t*)L_14);

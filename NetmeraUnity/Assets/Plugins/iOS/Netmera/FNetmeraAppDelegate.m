@@ -43,6 +43,10 @@ static NSData *lastPush;
     return YES;
 }
 
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+    return [super application:app openURL:url options:options];
+}
+
 void initNetmera(NSDictionary* launchOptions, NSString* netmeraSDKkey, NSString* baseUrl, NSNumber* logDisabled, NSNumber* popupDisabled) {
     BOOL printLogs = logDisabled ? [logDisabled boolValue] == 0 : false;
     if(printLogs) {

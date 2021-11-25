@@ -19259,9 +19259,17 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ObjectU5BU5D_tC1F4EE0DB0B7300255F5FD4AF64FE4C
 // System.Int32 Unity.Collections.NativeArray`1<UnityEngine.Rendering.BatchVisibility>::get_Length()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t NativeArray_1_get_Length_m303055881A858FFCFF7BCB643B385A6DBCF0AA5F_gshared (NativeArray_1_t18D233A2E30E28048C1252473AFD0799557294DA * __this, const RuntimeMethod* method)
 {
+	int32_t V_0 = 0;
 	{
 		int32_t L_0 = (int32_t)__this->get_m_Length_1();
-		return (int32_t)L_0;
+		V_0 = (int32_t)L_0;
+		goto IL_000a;
+	}
+
+IL_000a:
+	{
+		int32_t L_1 = V_0;
+		return (int32_t)L_1;
 	}
 }
 IL2CPP_EXTERN_C  int32_t NativeArray_1_get_Length_m303055881A858FFCFF7BCB643B385A6DBCF0AA5F_AdjustorThunk (RuntimeObject * __this, const RuntimeMethod* method)
@@ -19689,9 +19697,17 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NativeArray_1_Copy_m43A5E9C17F92080A9A4C
 // System.Int32 Unity.Collections.NativeArray`1<System.Byte>::get_Length()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t NativeArray_1_get_Length_m496FD8DC35A54963D8C9DB50D25AFF3BE4E6F32C_gshared (NativeArray_1_t3C2855C5B238E8C6739D4C17833F244B95C0F785 * __this, const RuntimeMethod* method)
 {
+	int32_t V_0 = 0;
 	{
 		int32_t L_0 = (int32_t)__this->get_m_Length_1();
-		return (int32_t)L_0;
+		V_0 = (int32_t)L_0;
+		goto IL_000a;
+	}
+
+IL_000a:
+	{
+		int32_t L_1 = V_0;
+		return (int32_t)L_1;
 	}
 }
 IL2CPP_EXTERN_C  int32_t NativeArray_1_get_Length_m496FD8DC35A54963D8C9DB50D25AFF3BE4E6F32C_AdjustorThunk (RuntimeObject * __this, const RuntimeMethod* method)
@@ -20118,9 +20134,17 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NativeArray_1_Copy_m092D25173734680E0524
 // System.Int32 Unity.Collections.NativeArray`1<System.Int32>::get_Length()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t NativeArray_1_get_Length_mCF1B4CB232B846B456DA59AD1C6CB648C841ABED_gshared (NativeArray_1_tD60079F06B473C85CF6C2BB4F2D203F38191AE99 * __this, const RuntimeMethod* method)
 {
+	int32_t V_0 = 0;
 	{
 		int32_t L_0 = (int32_t)__this->get_m_Length_1();
-		return (int32_t)L_0;
+		V_0 = (int32_t)L_0;
+		goto IL_000a;
+	}
+
+IL_000a:
+	{
+		int32_t L_1 = V_0;
+		return (int32_t)L_1;
 	}
 }
 IL2CPP_EXTERN_C  int32_t NativeArray_1_get_Length_mCF1B4CB232B846B456DA59AD1C6CB648C841ABED_AdjustorThunk (RuntimeObject * __this, const RuntimeMethod* method)
@@ -20547,9 +20571,17 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NativeArray_1_Copy_m5DC1C7C6CB16B784DCBB
 // System.Int32 Unity.Collections.NativeArray`1<UnityEngine.Experimental.GlobalIllumination.LightDataGI>::get_Length()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t NativeArray_1_get_Length_m79FAF0AC0B0F80B563FB6878D7FB62D5F36224EE_gshared (NativeArray_1_tF6A10DD2511425342F2B1B19CF0EA313D4F300D2 * __this, const RuntimeMethod* method)
 {
+	int32_t V_0 = 0;
 	{
 		int32_t L_0 = (int32_t)__this->get_m_Length_1();
-		return (int32_t)L_0;
+		V_0 = (int32_t)L_0;
+		goto IL_000a;
+	}
+
+IL_000a:
+	{
+		int32_t L_1 = V_0;
+		return (int32_t)L_1;
 	}
 }
 IL2CPP_EXTERN_C  int32_t NativeArray_1_get_Length_m79FAF0AC0B0F80B563FB6878D7FB62D5F36224EE_AdjustorThunk (RuntimeObject * __this, const RuntimeMethod* method)
@@ -20977,9 +21009,17 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NativeArray_1_Copy_mA613F22BD09CF98FFC5A
 // System.Int32 Unity.Collections.NativeArray`1<UnityEngine.Plane>::get_Length()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t NativeArray_1_get_Length_mA8CF1F6E4DD57E4AF585446EC08BB9D4C56E2197_gshared (NativeArray_1_t527C586787ACD1AD75E3C78BFB024FFA9925662E * __this, const RuntimeMethod* method)
 {
+	int32_t V_0 = 0;
 	{
 		int32_t L_0 = (int32_t)__this->get_m_Length_1();
-		return (int32_t)L_0;
+		V_0 = (int32_t)L_0;
+		goto IL_000a;
+	}
+
+IL_000a:
+	{
+		int32_t L_1 = V_0;
+		return (int32_t)L_1;
 	}
 }
 IL2CPP_EXTERN_C  int32_t NativeArray_1_get_Length_mA8CF1F6E4DD57E4AF585446EC08BB9D4C56E2197_AdjustorThunk (RuntimeObject * __this, const RuntimeMethod* method)

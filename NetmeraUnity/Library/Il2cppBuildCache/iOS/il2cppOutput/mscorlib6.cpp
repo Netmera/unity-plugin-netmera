@@ -17547,7 +17547,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool HashHelpers_IsPrime_m771A2E89205BC72625B
 		IL2CPP_RUNTIME_CLASS_INIT(Math_tA269614262430118C9FC5C4D9EF4F61C812568F0_il2cpp_TypeInfo_var);
 		double L_2;
 		L_2 = sqrt(((double)((double)L_1)));
-		V_0 = ((int32_t)((int32_t)L_2));
+		V_0 = il2cpp_codegen_cast_double_to_int<int32_t>(L_2);
 		V_1 = 3;
 		goto IL_001d;
 	}
@@ -17907,7 +17907,7 @@ IL_00af:
 		double L_21 = V_0;
 		IL2CPP_RUNTIME_CLASS_INIT(HashHelpers_t001D7D03DA7A3C3426744B45509316917E7A90F9_il2cpp_TypeInfo_var);
 		int32_t L_22;
-		L_22 = HashHelpers_GetPrime_m011AA1E1C23994FC160C25F3AD051749CA8BA48F(((int32_t)((int32_t)L_21)), /*hidden argument*/NULL);
+		L_22 = HashHelpers_GetPrime_m011AA1E1C23994FC160C25F3AD051749CA8BA48F(il2cpp_codegen_cast_double_to_int<int32_t>(L_21), /*hidden argument*/NULL);
 		G_B10_0 = L_22;
 	}
 
@@ -17919,7 +17919,7 @@ IL_00b6:
 		__this->set_buckets_0(L_24);
 		float L_25 = __this->get_loadFactor_4();
 		int32_t L_26 = V_1;
-		__this->set_loadsize_3(((int32_t)((int32_t)((float)il2cpp_codegen_multiply((float)L_25, (float)((float)((float)L_26)))))));
+		__this->set_loadsize_3(il2cpp_codegen_cast_double_to_int<int32_t>(((float)il2cpp_codegen_multiply((float)L_25, (float)((float)((float)L_26))))));
 		il2cpp_codegen_memory_barrier();
 		__this->set_isWriterInProgress_6(0);
 		return;
@@ -19027,7 +19027,7 @@ IL_006b:
 		__this->set_buckets_0(L_26);
 		float L_27 = __this->get_loadFactor_4();
 		int32_t L_28 = ___newsize0;
-		__this->set_loadsize_3(((int32_t)((int32_t)((float)il2cpp_codegen_multiply((float)L_27, (float)((float)((float)L_28)))))));
+		__this->set_loadsize_3(il2cpp_codegen_cast_double_to_int<int32_t>(((float)il2cpp_codegen_multiply((float)L_27, (float)((float)((float)L_28))))));
 		Hashtable_UpdateVersion_mAF8DACB9B82B538B70EC4DCF90B3747A696432AE(__this, /*hidden argument*/NULL);
 		il2cpp_codegen_memory_barrier();
 		__this->set_isWriterInProgress_6(0);
@@ -20479,7 +20479,7 @@ IL_0213:
 	{
 		float L_61 = __this->get_loadFactor_4();
 		int32_t L_62 = V_1;
-		__this->set_loadsize_3(((int32_t)((int32_t)((float)il2cpp_codegen_multiply((float)L_61, (float)((float)((float)L_62)))))));
+		__this->set_loadsize_3(il2cpp_codegen_cast_double_to_int<int32_t>(((float)il2cpp_codegen_multiply((float)L_61, (float)((float)((float)L_62))))));
 		RuntimeObject* L_63 = __this->get__keycomparer_8();
 		if (L_63)
 		{

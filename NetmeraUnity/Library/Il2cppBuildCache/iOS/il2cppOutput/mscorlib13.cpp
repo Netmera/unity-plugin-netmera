@@ -28261,7 +28261,7 @@ IL2CPP_EXTERN_C IL2CPP_NO_INLINE IL2CPP_METHOD_ATTR RegisteredWaitHandle_t525232
 	{
 		double L_0;
 		L_0 = TimeSpan_get_TotalMilliseconds_m97368AE0609D865EB2A6BAE96AAA97AF8BDBF1C5((TimeSpan_t4F6A0E13E703B65365CFCAB58E05EE0AF3EE6203 *)(&___timeout3), /*hidden argument*/NULL);
-		V_0 = ((int64_t)((int64_t)L_0));
+		V_0 = il2cpp_codegen_cast_double_to_int<int64_t>(L_0);
 		int64_t L_1 = V_0;
 		if ((((int64_t)L_1) >= ((int64_t)((int64_t)((int64_t)(-1))))))
 		{
@@ -29977,7 +29977,7 @@ IL_0022:
 IL2CPP_EXTERN_C  void DelegatePInvokeWrapper_ThreadStart_tA13019555BA3CB2B0128F0880760196BF790E687 (ThreadStart_tA13019555BA3CB2B0128F0880760196BF790E687 * __this, const RuntimeMethod* method)
 {
 	typedef void (DEFAULT_CALL *PInvokeFunc)();
-	PInvokeFunc il2cppPInvokeFunc = reinterpret_cast<PInvokeFunc>(il2cpp_codegen_get_method_pointer(((RuntimeDelegate*)__this)->method));
+	PInvokeFunc il2cppPInvokeFunc = reinterpret_cast<PInvokeFunc>(((RuntimeDelegate*)__this)->method->nativeFunction);
 
 	// Native function invocation
 	il2cppPInvokeFunc();
@@ -31742,7 +31742,7 @@ IL_0066:
 		double L_11 = V_0;
 		TimeSpan_t4F6A0E13E703B65365CFCAB58E05EE0AF3EE6203  L_12;
 		memset((&L_12), 0, sizeof(L_12));
-		TimeSpan__ctor_mC80FA729ECA3A7AF31D9F517A95E60FC23EB86B0_inline((&L_12), ((int64_t)il2cpp_codegen_multiply((int64_t)((int64_t)((int64_t)L_11)), (int64_t)((int64_t)((int64_t)((int32_t)10000))))), /*hidden argument*/NULL);
+		TimeSpan__ctor_mC80FA729ECA3A7AF31D9F517A95E60FC23EB86B0_inline((&L_12), ((int64_t)il2cpp_codegen_multiply((int64_t)il2cpp_codegen_cast_double_to_int<int64_t>(L_11), (int64_t)((int64_t)((int64_t)((int32_t)10000))))), /*hidden argument*/NULL);
 		return L_12;
 	}
 }
@@ -32504,7 +32504,7 @@ IL_00a8:
 		IL2CPP_RUNTIME_CLASS_INIT(Math_tA269614262430118C9FC5C4D9EF4F61C812568F0_il2cpp_TypeInfo_var);
 		double L_24;
 		L_24 = Math_Pow_mC2C8700DAAD1316AA457A1D271F78CDF0D61AC2F((10.0), ((double)((double)((int32_t)il2cpp_codegen_subtract((int32_t)7, (int32_t)L_23)))), /*hidden argument*/NULL);
-		V_6 = ((int32_t)((int32_t)((int64_t)((int64_t)((int64_t)((int64_t)L_21))/(int64_t)((int64_t)((int64_t)L_24))))));
+		V_6 = ((int32_t)((int32_t)((int64_t)((int64_t)((int64_t)((int64_t)L_21))/(int64_t)il2cpp_codegen_cast_double_to_int<int64_t>(L_24)))));
 	}
 
 IL_00cc:
@@ -33033,7 +33033,7 @@ IL_01ba:
 		IL2CPP_RUNTIME_CLASS_INIT(Math_tA269614262430118C9FC5C4D9EF4F61C812568F0_il2cpp_TypeInfo_var);
 		double L_67;
 		L_67 = Math_Pow_mC2C8700DAAD1316AA457A1D271F78CDF0D61AC2F((10.0), ((double)((double)((int32_t)il2cpp_codegen_subtract((int32_t)7, (int32_t)L_66)))), /*hidden argument*/NULL);
-		V_6 = ((int64_t)((int64_t)L_65/(int64_t)((int64_t)((int64_t)L_67))));
+		V_6 = ((int64_t)((int64_t)L_65/(int64_t)il2cpp_codegen_cast_double_to_int<int64_t>(L_67)));
 		StringBuilder_t * L_68 = V_9;
 		IL2CPP_RUNTIME_CLASS_INIT(DateTimeFormat_t03C933B58093015648423B6A1A79C999650F2E4A_il2cpp_TypeInfo_var);
 		StringU5BU5D_tACEBFEDE350025B554CD507C9AE8FFE49359549A* L_69 = ((DateTimeFormat_t03C933B58093015648423B6A1A79C999650F2E4A_StaticFields*)il2cpp_codegen_static_fields_for(DateTimeFormat_t03C933B58093015648423B6A1A79C999650F2E4A_il2cpp_TypeInfo_var))->get_fixedNumberFormats_2();
@@ -33084,7 +33084,7 @@ IL_021c:
 		IL2CPP_RUNTIME_CLASS_INIT(Math_tA269614262430118C9FC5C4D9EF4F61C812568F0_il2cpp_TypeInfo_var);
 		double L_86;
 		L_86 = Math_Pow_mC2C8700DAAD1316AA457A1D271F78CDF0D61AC2F((10.0), ((double)((double)((int32_t)il2cpp_codegen_subtract((int32_t)7, (int32_t)L_85)))), /*hidden argument*/NULL);
-		V_6 = ((int64_t)((int64_t)L_84/(int64_t)((int64_t)((int64_t)L_86))));
+		V_6 = ((int64_t)((int64_t)L_84/(int64_t)il2cpp_codegen_cast_double_to_int<int64_t>(L_86)));
 		int32_t L_87 = V_8;
 		V_12 = L_87;
 		goto IL_0256;
@@ -41920,7 +41920,7 @@ IL_02cd:
 		L_133 = TimeSpan_get_TotalMinutes_m96E1D555D4663771C703D7F9A5D8F775E27853C3((TimeSpan_t4F6A0E13E703B65365CFCAB58E05EE0AF3EE6203 *)(&V_10), /*hidden argument*/NULL);
 		IL2CPP_RUNTIME_CLASS_INIT(TimeSpan_t4F6A0E13E703B65365CFCAB58E05EE0AF3EE6203_il2cpp_TypeInfo_var);
 		TimeSpan_t4F6A0E13E703B65365CFCAB58E05EE0AF3EE6203  L_134;
-		L_134 = TimeSpan_FromMinutes_mAB9F93263460C5FE2BC56C34F268C97EB6035958(((double)((double)((int64_t)((int64_t)((double)il2cpp_codegen_add((double)L_133, (double)(0.5))))))), /*hidden argument*/NULL);
+		L_134 = TimeSpan_FromMinutes_mAB9F93263460C5FE2BC56C34F268C97EB6035958(((double)((double)il2cpp_codegen_cast_double_to_int<int64_t>(((double)il2cpp_codegen_add((double)L_133, (double)(0.5)))))), /*hidden argument*/NULL);
 		V_10 = L_134;
 	}
 

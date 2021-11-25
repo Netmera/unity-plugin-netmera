@@ -11193,7 +11193,7 @@ IL_001b:
 IL_0024:
 		{
 			if (((double)il2cpp_codegen_add((double)G_B3_1, (double)G_B3_0)) > (double)((std::numeric_limits<int64_t>::max)())) IL2CPP_RAISE_MANAGED_EXCEPTION(il2cpp_codegen_get_overflow_exception(), DateTime_Add_m44DAE4F7455884CCC543706595635CC4DA2E5925_RuntimeMethod_var);
-			V_0 = ((int64_t)((int64_t)((double)il2cpp_codegen_add((double)G_B3_1, (double)G_B3_0))));
+			V_0 = il2cpp_codegen_cast_double_to_int<int64_t>(((double)il2cpp_codegen_add((double)G_B3_1, (double)G_B3_0)));
 			goto IL_003f;
 		}
 	} // end try (depth: 1)
@@ -15037,7 +15037,7 @@ IL_01d8:
 		IL2CPP_RUNTIME_CLASS_INIT(Math_tA269614262430118C9FC5C4D9EF4F61C812568F0_il2cpp_TypeInfo_var);
 		double L_80;
 		L_80 = Math_Pow_mC2C8700DAAD1316AA457A1D271F78CDF0D61AC2F((10.0), ((double)((double)((int32_t)il2cpp_codegen_subtract((int32_t)7, (int32_t)L_79)))), /*hidden argument*/NULL);
-		V_12 = ((int64_t)((int64_t)L_78/(int64_t)((int64_t)((int64_t)L_80))));
+		V_12 = ((int64_t)((int64_t)L_78/(int64_t)il2cpp_codegen_cast_double_to_int<int64_t>(L_80)));
 		Il2CppChar L_81 = V_7;
 		if ((!(((uint32_t)L_81) == ((uint32_t)((int32_t)102)))))
 		{
@@ -32167,7 +32167,7 @@ IL_0310:
 		double L_135;
 		L_135 = bankers_round(((double)il2cpp_codegen_multiply((double)L_134, (double)(10000000.0))));
 		DateTime_tEAF2CD16E071DF5441F40822E4CFE880E5245405  L_136;
-		L_136 = DateTime_AddTicks_m62906BA32DF3F1031061042F5F1B15125F2673EB((DateTime_tEAF2CD16E071DF5441F40822E4CFE880E5245405 *)(&V_0), ((int64_t)((int64_t)L_135)), /*hidden argument*/NULL);
+		L_136 = DateTime_AddTicks_m62906BA32DF3F1031061042F5F1B15125F2673EB((DateTime_tEAF2CD16E071DF5441F40822E4CFE880E5245405 *)(&V_0), il2cpp_codegen_cast_double_to_int<int64_t>(L_135), /*hidden argument*/NULL);
 		V_0 = L_136;
 	}
 
@@ -33211,7 +33211,7 @@ IL_0223:
 		double L_100;
 		L_100 = bankers_round(((double)il2cpp_codegen_multiply((double)L_99, (double)(10000000.0))));
 		DateTime_tEAF2CD16E071DF5441F40822E4CFE880E5245405  L_101;
-		L_101 = DateTime_AddTicks_m62906BA32DF3F1031061042F5F1B15125F2673EB((DateTime_tEAF2CD16E071DF5441F40822E4CFE880E5245405 *)(&V_4), ((int64_t)((int64_t)L_100)), /*hidden argument*/NULL);
+		L_101 = DateTime_AddTicks_m62906BA32DF3F1031061042F5F1B15125F2673EB((DateTime_tEAF2CD16E071DF5441F40822E4CFE880E5245405 *)(&V_4), il2cpp_codegen_cast_double_to_int<int64_t>(L_100), /*hidden argument*/NULL);
 		V_4 = L_101;
 		DateTimeResult_t44941ADE58F716AB71DABBFE9BE490F0331F3EF0 * L_102 = ___result3;
 		DateTime_tEAF2CD16E071DF5441F40822E4CFE880E5245405  L_103 = V_4;

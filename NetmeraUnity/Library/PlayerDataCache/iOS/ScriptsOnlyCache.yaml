@@ -6,6 +6,8 @@ ScriptsOnlyBuild:
     - Unity.Android.Logcat.AndroidLogcatManager
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
+    Unity.Timeline.Editor.dll:
+    - TimelineProjectSettings
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
@@ -43,21 +45,21 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1588}
+      Script: {instanceID: 1576}
     - Class: 114
-      Script: {instanceID: 2284}
+      Script: {instanceID: 2276}
     - Class: 114
-      Script: {instanceID: 2536}
+      Script: {instanceID: 2524}
     - Class: 114
-      Script: {instanceID: 2714}
+      Script: {instanceID: 2704}
     - Class: 114
-      Script: {instanceID: 2892}
+      Script: {instanceID: 2880}
     - Class: 114
-      Script: {instanceID: 3124}
+      Script: {instanceID: 3118}
     - Class: 114
-      Script: {instanceID: 3436}
+      Script: {instanceID: 3430}
     - Class: 114
-      Script: {instanceID: 3582}
+      Script: {instanceID: 3574}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -173,7 +175,7 @@ ScriptsOnlyBuild:
     className: BaseInput
   - hash:
       serializedVersion: 2
-      Hash: f0786811516f7de8befd7a3e181e567a
+      Hash: 300fd99066f8c288e85f5e81ce65fe34
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_FontAsset
@@ -185,7 +187,7 @@ ScriptsOnlyBuild:
     className: Physics2DRaycaster
   - hash:
       serializedVersion: 2
-      Hash: a2612813f45d0ced02c3e4bc9dbea8b4
+      Hash: da4cc51a02ce84afe2cecd27cfe6997a
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextMeshPro
@@ -245,7 +247,7 @@ ScriptsOnlyBuild:
     className: ActivationTrack
   - hash:
       serializedVersion: 2
-      Hash: d791aa6007fa3640be1164ea75bb087d
+      Hash: 800c50acba124432abb4cf0d47202e06
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_StyleSheet
@@ -291,12 +293,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: ControlTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 5f170942ee57c7a568f5bcfc7521adea
-    assemblyName: UnityEngine.TestRunner.dll
-    namespaceName: UnityEngine.TestTools
-    className: EnumerableTestState
   - hash:
       serializedVersion: 2
       Hash: 3165968ba45c74472d279ba04455fccb
@@ -528,4 +524,4 @@ ScriptsOnlyBuild:
   platform: 9
   scenePathNames:
   - Assets/Netmera/Demo/NetmeraDemoScene.unity
-  playerPath: /Users/admin/Desktop/NetmeraBuild
+  playerPath: "/Users/bsoykal/Projects/NM/builderNMUN\u0130ty"

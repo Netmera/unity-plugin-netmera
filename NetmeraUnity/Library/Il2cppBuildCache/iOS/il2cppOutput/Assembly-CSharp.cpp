@@ -8185,7 +8185,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t JSONNode_get_AsInt_m9A612D6C4746A4065
 		// get { return (int)AsDouble; }
 		double L_0;
 		L_0 = VirtFuncInvoker0< double >::Invoke(33 /* System.Double Netmera.JSONNode::get_AsDouble() */, __this);
-		V_0 = ((int32_t)((int32_t)L_0));
+		V_0 = il2cpp_codegen_cast_double_to_int<int32_t>(L_0);
 		goto IL_000b;
 	}
 
@@ -11573,7 +11573,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t JSONNumber_get_AsLong_m968427DAE91EBD
 	{
 		// get { return (long)m_Data; }
 		double L_0 = __this->get_m_Data_4();
-		V_0 = ((int64_t)((int64_t)L_0));
+		V_0 = il2cpp_codegen_cast_double_to_int<int64_t>(L_0);
 		goto IL_000b;
 	}
 

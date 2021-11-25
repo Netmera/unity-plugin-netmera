@@ -19047,24 +19047,22 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CanvasUpdateRegistry_PerformUpdate_mC0E8
 	}
 	int32_t V_0 = 0;
 	int32_t V_1 = 0;
-	int32_t V_2 = 0;
-	int32_t V_3 = 0;
-	RuntimeObject* V_4 = NULL;
+	RuntimeObject* V_2 = NULL;
+	bool V_3 = false;
+	Exception_t * V_4 = NULL;
 	bool V_5 = false;
-	Exception_t * V_6 = NULL;
-	bool V_7 = false;
+	bool V_6 = false;
+	int32_t V_7 = 0;
 	bool V_8 = false;
 	int32_t V_9 = 0;
-	bool V_10 = false;
-	int32_t V_11 = 0;
-	int32_t V_12 = 0;
-	RuntimeObject* V_13 = NULL;
+	int32_t V_10 = 0;
+	RuntimeObject* V_11 = NULL;
+	bool V_12 = false;
+	Exception_t * V_13 = NULL;
 	bool V_14 = false;
-	Exception_t * V_15 = NULL;
-	bool V_16 = false;
+	bool V_15 = false;
+	int32_t V_16 = 0;
 	bool V_17 = false;
-	int32_t V_18 = 0;
-	bool V_19 = false;
 	il2cpp::utils::ExceptionSupportStack<RuntimeObject*, 1> __active_exceptions;
 	il2cpp::utils::ExceptionSupportStack<int32_t, 4> __leave_targets;
 	{
@@ -19080,70 +19078,64 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void CanvasUpdateRegistry_PerformUpdate_mC0E8
 		Comparison_1_t72C3E81825A1194637F6FF9F6157B7501B0FB263 * L_1 = ((CanvasUpdateRegistry_t53CA156F8691B17AB7B441C52E0FB436E96A5D0B_StaticFields*)il2cpp_codegen_static_fields_for(CanvasUpdateRegistry_t53CA156F8691B17AB7B441C52E0FB436E96A5D0B_il2cpp_TypeInfo_var))->get_s_SortLayoutFunction_7();
 		NullCheck(L_0);
 		IndexedSet_1_Sort_m0096555B4263E30797E15EB9A8CDABF1FD01D84E(L_0, L_1, /*hidden argument*/IndexedSet_1_Sort_m0096555B4263E30797E15EB9A8CDABF1FD01D84E_RuntimeMethod_var);
-		// var layoutRebuildQueueCount = m_LayoutRebuildQueue.Count;
-		IndexedSet_1_tEB5AA15EF0F17F1A471B6F4FA48ACAEF534C44B7 * L_2 = __this->get_m_LayoutRebuildQueue_5();
-		NullCheck(L_2);
-		int32_t L_3;
-		L_3 = IndexedSet_1_get_Count_m4EE30AAC14007368A2126C07275B8EC643A126C0(L_2, /*hidden argument*/IndexedSet_1_get_Count_m4EE30AAC14007368A2126C07275B8EC643A126C0_RuntimeMethod_var);
-		V_0 = L_3;
 		// for (int i = 0; i <= (int)CanvasUpdate.PostLayout; i++)
-		V_2 = 0;
-		goto IL_00a3;
+		V_0 = 0;
+		goto IL_009b;
 	}
 
-IL_0037:
+IL_002b:
 	{
 		// UnityEngine.Profiling.Profiler.BeginSample(m_CanvasUpdateProfilerStrings[i]);
-		StringU5BU5D_tACEBFEDE350025B554CD507C9AE8FFE49359549A* L_4 = __this->get_m_CanvasUpdateProfilerStrings_3();
-		int32_t L_5 = V_2;
-		NullCheck(L_4);
-		int32_t L_6 = L_5;
-		String_t* L_7 = (L_4)->GetAt(static_cast<il2cpp_array_size_t>(L_6));
-		Profiler_BeginSample_m72E4BD9503BC991BAFAED992FF1CA4504C741865_inline(L_7, /*hidden argument*/NULL);
-		// for (int j = 0; j < layoutRebuildQueueCount; j++)
-		V_3 = 0;
-		goto IL_008e;
+		StringU5BU5D_tACEBFEDE350025B554CD507C9AE8FFE49359549A* L_2 = __this->get_m_CanvasUpdateProfilerStrings_3();
+		int32_t L_3 = V_0;
+		NullCheck(L_2);
+		int32_t L_4 = L_3;
+		String_t* L_5 = (L_2)->GetAt(static_cast<il2cpp_array_size_t>(L_4));
+		Profiler_BeginSample_m72E4BD9503BC991BAFAED992FF1CA4504C741865_inline(L_5, /*hidden argument*/NULL);
+		// for (int j = 0; j < m_LayoutRebuildQueue.Count; j++)
+		V_1 = 0;
+		goto IL_007c;
 	}
 
-IL_004a:
+IL_003e:
 	{
 		// var rebuild = m_LayoutRebuildQueue[j];
-		IndexedSet_1_tEB5AA15EF0F17F1A471B6F4FA48ACAEF534C44B7 * L_8 = __this->get_m_LayoutRebuildQueue_5();
-		int32_t L_9 = V_3;
-		NullCheck(L_8);
-		RuntimeObject* L_10;
-		L_10 = IndexedSet_1_get_Item_m92D8AF97FD4BA2CF8D8ED9557F856B6678FCA23C(L_8, L_9, /*hidden argument*/IndexedSet_1_get_Item_m92D8AF97FD4BA2CF8D8ED9557F856B6678FCA23C_RuntimeMethod_var);
-		V_4 = L_10;
+		IndexedSet_1_tEB5AA15EF0F17F1A471B6F4FA48ACAEF534C44B7 * L_6 = __this->get_m_LayoutRebuildQueue_5();
+		int32_t L_7 = V_1;
+		NullCheck(L_6);
+		RuntimeObject* L_8;
+		L_8 = IndexedSet_1_get_Item_m92D8AF97FD4BA2CF8D8ED9557F856B6678FCA23C(L_6, L_7, /*hidden argument*/IndexedSet_1_get_Item_m92D8AF97FD4BA2CF8D8ED9557F856B6678FCA23C_RuntimeMethod_var);
+		V_2 = L_8;
 	}
 
-IL_0059:
+IL_004c:
 	try
 	{ // begin try (depth: 1)
 		{
 			// if (ObjectValidForUpdate(rebuild))
-			RuntimeObject* L_11 = V_4;
-			bool L_12;
-			L_12 = CanvasUpdateRegistry_ObjectValidForUpdate_m8121661F105B8FB50AAF73674224CF5C647ECE31(__this, L_11, /*hidden argument*/NULL);
-			V_5 = L_12;
-			bool L_13 = V_5;
-			if (!L_13)
+			RuntimeObject* L_9 = V_2;
+			bool L_10;
+			L_10 = CanvasUpdateRegistry_ObjectValidForUpdate_m8121661F105B8FB50AAF73674224CF5C647ECE31(__this, L_9, /*hidden argument*/NULL);
+			V_3 = L_10;
+			bool L_11 = V_3;
+			if (!L_11)
 			{
-				goto IL_0071;
+				goto IL_0060;
 			}
 		}
 
-IL_0068:
+IL_0058:
 		{
 			// rebuild.Rebuild((CanvasUpdate)i);
-			RuntimeObject* L_14 = V_4;
-			int32_t L_15 = V_2;
-			NullCheck(L_14);
-			InterfaceActionInvoker1< int32_t >::Invoke(0 /* System.Void UnityEngine.UI.ICanvasElement::Rebuild(UnityEngine.UI.CanvasUpdate) */, ICanvasElement_t604A7C95E46ABA335897B34A28DC8E542DA787E9_il2cpp_TypeInfo_var, L_14, L_15);
+			RuntimeObject* L_12 = V_2;
+			int32_t L_13 = V_0;
+			NullCheck(L_12);
+			InterfaceActionInvoker1< int32_t >::Invoke(0 /* System.Void UnityEngine.UI.ICanvasElement::Rebuild(UnityEngine.UI.CanvasUpdate) */, ICanvasElement_t604A7C95E46ABA335897B34A28DC8E542DA787E9_il2cpp_TypeInfo_var, L_12, L_13);
 		}
 
-IL_0071:
+IL_0060:
 		{
-			goto IL_0089;
+			goto IL_0077;
 		}
 	} // end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
@@ -19151,96 +19143,102 @@ IL_0071:
 		if(il2cpp_codegen_class_is_assignable_from (((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&Exception_t_il2cpp_TypeInfo_var)), il2cpp_codegen_object_class(e.ex)))
 		{
 			IL2CPP_PUSH_ACTIVE_EXCEPTION(e.ex);
-			goto CATCH_0074;
+			goto CATCH_0063;
 		}
 		throw e;
 	}
 
-CATCH_0074:
+CATCH_0063:
 	{ // begin catch(System.Exception)
 		// catch (Exception e)
-		V_6 = ((Exception_t *)IL2CPP_GET_ACTIVE_EXCEPTION(Exception_t *));
+		V_4 = ((Exception_t *)IL2CPP_GET_ACTIVE_EXCEPTION(Exception_t *));
 		// Debug.LogException(e, rebuild.transform);
-		Exception_t * L_16 = V_6;
-		RuntimeObject* L_17 = V_4;
-		NullCheck(L_17);
-		Transform_tA8193BB29D4D2C7EC04918F3ED1816345186C3F1 * L_18;
-		L_18 = InterfaceFuncInvoker0< Transform_tA8193BB29D4D2C7EC04918F3ED1816345186C3F1 * >::Invoke(1 /* UnityEngine.Transform UnityEngine.UI.ICanvasElement::get_transform() */, ((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&ICanvasElement_t604A7C95E46ABA335897B34A28DC8E542DA787E9_il2cpp_TypeInfo_var)), L_17);
+		Exception_t * L_14 = V_4;
+		RuntimeObject* L_15 = V_2;
+		NullCheck(L_15);
+		Transform_tA8193BB29D4D2C7EC04918F3ED1816345186C3F1 * L_16;
+		L_16 = InterfaceFuncInvoker0< Transform_tA8193BB29D4D2C7EC04918F3ED1816345186C3F1 * >::Invoke(1 /* UnityEngine.Transform UnityEngine.UI.ICanvasElement::get_transform() */, ((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&ICanvasElement_t604A7C95E46ABA335897B34A28DC8E542DA787E9_il2cpp_TypeInfo_var)), L_15);
 		IL2CPP_RUNTIME_CLASS_INIT(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&Debug_tEB68BCBEB8EFD60F8043C67146DC05E7F50F374B_il2cpp_TypeInfo_var)));
-		Debug_LogException_mE0C50EE1EE5F38196CABAF961EF7E43DD520C29B(L_16, L_18, /*hidden argument*/NULL);
+		Debug_LogException_mE0C50EE1EE5F38196CABAF961EF7E43DD520C29B(L_14, L_16, /*hidden argument*/NULL);
 		IL2CPP_POP_ACTIVE_EXCEPTION();
-		goto IL_0089;
+		goto IL_0077;
 	} // end catch (depth: 1)
 
-IL_0089:
+IL_0077:
 	{
-		// for (int j = 0; j < layoutRebuildQueueCount; j++)
-		int32_t L_19 = V_3;
-		V_3 = ((int32_t)il2cpp_codegen_add((int32_t)L_19, (int32_t)1));
+		// for (int j = 0; j < m_LayoutRebuildQueue.Count; j++)
+		int32_t L_17 = V_1;
+		V_1 = ((int32_t)il2cpp_codegen_add((int32_t)L_17, (int32_t)1));
 	}
 
-IL_008e:
+IL_007c:
 	{
-		// for (int j = 0; j < layoutRebuildQueueCount; j++)
-		int32_t L_20 = V_3;
-		int32_t L_21 = V_0;
-		V_7 = (bool)((((int32_t)L_20) < ((int32_t)L_21))? 1 : 0);
-		bool L_22 = V_7;
-		if (L_22)
+		// for (int j = 0; j < m_LayoutRebuildQueue.Count; j++)
+		int32_t L_18 = V_1;
+		IndexedSet_1_tEB5AA15EF0F17F1A471B6F4FA48ACAEF534C44B7 * L_19 = __this->get_m_LayoutRebuildQueue_5();
+		NullCheck(L_19);
+		int32_t L_20;
+		L_20 = IndexedSet_1_get_Count_m4EE30AAC14007368A2126C07275B8EC643A126C0(L_19, /*hidden argument*/IndexedSet_1_get_Count_m4EE30AAC14007368A2126C07275B8EC643A126C0_RuntimeMethod_var);
+		V_5 = (bool)((((int32_t)L_18) < ((int32_t)L_20))? 1 : 0);
+		bool L_21 = V_5;
+		if (L_21)
 		{
-			goto IL_004a;
+			goto IL_003e;
 		}
 	}
 	{
 		// UnityEngine.Profiling.Profiler.EndSample();
 		Profiler_EndSample_m78C76E709113E225D47687E26EA320E4FC548B71(/*hidden argument*/NULL);
 		// for (int i = 0; i <= (int)CanvasUpdate.PostLayout; i++)
-		int32_t L_23 = V_2;
-		V_2 = ((int32_t)il2cpp_codegen_add((int32_t)L_23, (int32_t)1));
+		int32_t L_22 = V_0;
+		V_0 = ((int32_t)il2cpp_codegen_add((int32_t)L_22, (int32_t)1));
 	}
 
-IL_00a3:
+IL_009b:
 	{
 		// for (int i = 0; i <= (int)CanvasUpdate.PostLayout; i++)
-		int32_t L_24 = V_2;
-		V_8 = (bool)((((int32_t)((((int32_t)L_24) > ((int32_t)2))? 1 : 0)) == ((int32_t)0))? 1 : 0);
-		bool L_25 = V_8;
-		if (L_25)
+		int32_t L_23 = V_0;
+		V_6 = (bool)((((int32_t)((((int32_t)L_23) > ((int32_t)2))? 1 : 0)) == ((int32_t)0))? 1 : 0);
+		bool L_24 = V_6;
+		if (L_24)
 		{
-			goto IL_0037;
+			goto IL_002b;
 		}
 	}
 	{
-		// for (int i = 0; i < layoutRebuildQueueCount; ++i)
-		V_9 = 0;
-		goto IL_00ce;
+		// for (int i = 0; i < m_LayoutRebuildQueue.Count; ++i)
+		V_7 = 0;
+		goto IL_00c6;
 	}
 
-IL_00b5:
+IL_00ad:
 	{
 		// m_LayoutRebuildQueue[i].LayoutComplete();
-		IndexedSet_1_tEB5AA15EF0F17F1A471B6F4FA48ACAEF534C44B7 * L_26 = __this->get_m_LayoutRebuildQueue_5();
-		int32_t L_27 = V_9;
-		NullCheck(L_26);
-		RuntimeObject* L_28;
-		L_28 = IndexedSet_1_get_Item_m92D8AF97FD4BA2CF8D8ED9557F856B6678FCA23C(L_26, L_27, /*hidden argument*/IndexedSet_1_get_Item_m92D8AF97FD4BA2CF8D8ED9557F856B6678FCA23C_RuntimeMethod_var);
-		NullCheck(L_28);
-		InterfaceActionInvoker0::Invoke(2 /* System.Void UnityEngine.UI.ICanvasElement::LayoutComplete() */, ICanvasElement_t604A7C95E46ABA335897B34A28DC8E542DA787E9_il2cpp_TypeInfo_var, L_28);
-		// for (int i = 0; i < layoutRebuildQueueCount; ++i)
-		int32_t L_29 = V_9;
-		V_9 = ((int32_t)il2cpp_codegen_add((int32_t)L_29, (int32_t)1));
+		IndexedSet_1_tEB5AA15EF0F17F1A471B6F4FA48ACAEF534C44B7 * L_25 = __this->get_m_LayoutRebuildQueue_5();
+		int32_t L_26 = V_7;
+		NullCheck(L_25);
+		RuntimeObject* L_27;
+		L_27 = IndexedSet_1_get_Item_m92D8AF97FD4BA2CF8D8ED9557F856B6678FCA23C(L_25, L_26, /*hidden argument*/IndexedSet_1_get_Item_m92D8AF97FD4BA2CF8D8ED9557F856B6678FCA23C_RuntimeMethod_var);
+		NullCheck(L_27);
+		InterfaceActionInvoker0::Invoke(2 /* System.Void UnityEngine.UI.ICanvasElement::LayoutComplete() */, ICanvasElement_t604A7C95E46ABA335897B34A28DC8E542DA787E9_il2cpp_TypeInfo_var, L_27);
+		// for (int i = 0; i < m_LayoutRebuildQueue.Count; ++i)
+		int32_t L_28 = V_7;
+		V_7 = ((int32_t)il2cpp_codegen_add((int32_t)L_28, (int32_t)1));
 	}
 
-IL_00ce:
+IL_00c6:
 	{
-		// for (int i = 0; i < layoutRebuildQueueCount; ++i)
-		int32_t L_30 = V_9;
-		int32_t L_31 = V_0;
-		V_10 = (bool)((((int32_t)L_30) < ((int32_t)L_31))? 1 : 0);
-		bool L_32 = V_10;
+		// for (int i = 0; i < m_LayoutRebuildQueue.Count; ++i)
+		int32_t L_29 = V_7;
+		IndexedSet_1_tEB5AA15EF0F17F1A471B6F4FA48ACAEF534C44B7 * L_30 = __this->get_m_LayoutRebuildQueue_5();
+		NullCheck(L_30);
+		int32_t L_31;
+		L_31 = IndexedSet_1_get_Count_m4EE30AAC14007368A2126C07275B8EC643A126C0(L_30, /*hidden argument*/IndexedSet_1_get_Count_m4EE30AAC14007368A2126C07275B8EC643A126C0_RuntimeMethod_var);
+		V_8 = (bool)((((int32_t)L_29) < ((int32_t)L_31))? 1 : 0);
+		bool L_32 = V_8;
 		if (L_32)
 		{
-			goto IL_00b5;
+			goto IL_00ad;
 		}
 	}
 	{
@@ -19265,70 +19263,64 @@ IL_00ce:
 		Profiler_EndSample_m78C76E709113E225D47687E26EA320E4FC548B71(/*hidden argument*/NULL);
 		// m_PerformingGraphicUpdate = true;
 		__this->set_m_PerformingGraphicUpdate_2((bool)1);
-		// var graphicRebuildQueueCount = m_GraphicRebuildQueue.Count;
-		IndexedSet_1_tEB5AA15EF0F17F1A471B6F4FA48ACAEF534C44B7 * L_35 = __this->get_m_GraphicRebuildQueue_6();
-		NullCheck(L_35);
-		int32_t L_36;
-		L_36 = IndexedSet_1_get_Count_m4EE30AAC14007368A2126C07275B8EC643A126C0(L_35, /*hidden argument*/IndexedSet_1_get_Count_m4EE30AAC14007368A2126C07275B8EC643A126C0_RuntimeMethod_var);
-		V_1 = L_36;
 		// for (var i = (int)CanvasUpdate.PreRender; i < (int)CanvasUpdate.MaxUpdateValue; i++)
-		V_11 = 3;
+		V_9 = 3;
 		goto IL_01b1;
 	}
 
-IL_0131:
+IL_0127:
 	{
 		// UnityEngine.Profiling.Profiler.BeginSample(m_CanvasUpdateProfilerStrings[i]);
-		StringU5BU5D_tACEBFEDE350025B554CD507C9AE8FFE49359549A* L_37 = __this->get_m_CanvasUpdateProfilerStrings_3();
-		int32_t L_38 = V_11;
-		NullCheck(L_37);
-		int32_t L_39 = L_38;
-		String_t* L_40 = (L_37)->GetAt(static_cast<il2cpp_array_size_t>(L_39));
-		Profiler_BeginSample_m72E4BD9503BC991BAFAED992FF1CA4504C741865_inline(L_40, /*hidden argument*/NULL);
-		// for (var k = 0; k < graphicRebuildQueueCount; k++)
-		V_12 = 0;
-		goto IL_0199;
+		StringU5BU5D_tACEBFEDE350025B554CD507C9AE8FFE49359549A* L_35 = __this->get_m_CanvasUpdateProfilerStrings_3();
+		int32_t L_36 = V_9;
+		NullCheck(L_35);
+		int32_t L_37 = L_36;
+		String_t* L_38 = (L_35)->GetAt(static_cast<il2cpp_array_size_t>(L_37));
+		Profiler_BeginSample_m72E4BD9503BC991BAFAED992FF1CA4504C741865_inline(L_38, /*hidden argument*/NULL);
+		// for (var k = 0; k < m_GraphicRebuildQueue.Count; k++)
+		V_10 = 0;
+		goto IL_018f;
 	}
 
-IL_0146:
+IL_013c:
 	{
 	}
 
-IL_0147:
+IL_013d:
 	try
 	{ // begin try (depth: 1)
 		{
 			// var element = m_GraphicRebuildQueue[k];
-			IndexedSet_1_tEB5AA15EF0F17F1A471B6F4FA48ACAEF534C44B7 * L_41 = __this->get_m_GraphicRebuildQueue_6();
-			int32_t L_42 = V_12;
-			NullCheck(L_41);
-			RuntimeObject* L_43;
-			L_43 = IndexedSet_1_get_Item_m92D8AF97FD4BA2CF8D8ED9557F856B6678FCA23C(L_41, L_42, /*hidden argument*/IndexedSet_1_get_Item_m92D8AF97FD4BA2CF8D8ED9557F856B6678FCA23C_RuntimeMethod_var);
-			V_13 = L_43;
+			IndexedSet_1_tEB5AA15EF0F17F1A471B6F4FA48ACAEF534C44B7 * L_39 = __this->get_m_GraphicRebuildQueue_6();
+			int32_t L_40 = V_10;
+			NullCheck(L_39);
+			RuntimeObject* L_41;
+			L_41 = IndexedSet_1_get_Item_m92D8AF97FD4BA2CF8D8ED9557F856B6678FCA23C(L_39, L_40, /*hidden argument*/IndexedSet_1_get_Item_m92D8AF97FD4BA2CF8D8ED9557F856B6678FCA23C_RuntimeMethod_var);
+			V_11 = L_41;
 			// if (ObjectValidForUpdate(element))
-			RuntimeObject* L_44 = V_13;
-			bool L_45;
-			L_45 = CanvasUpdateRegistry_ObjectValidForUpdate_m8121661F105B8FB50AAF73674224CF5C647ECE31(__this, L_44, /*hidden argument*/NULL);
-			V_14 = L_45;
-			bool L_46 = V_14;
-			if (!L_46)
+			RuntimeObject* L_42 = V_11;
+			bool L_43;
+			L_43 = CanvasUpdateRegistry_ObjectValidForUpdate_m8121661F105B8FB50AAF73674224CF5C647ECE31(__this, L_42, /*hidden argument*/NULL);
+			V_12 = L_43;
+			bool L_44 = V_12;
+			if (!L_44)
 			{
-				goto IL_016f;
+				goto IL_0165;
 			}
+		}
+
+IL_015b:
+		{
+			// element.Rebuild((CanvasUpdate)i);
+			RuntimeObject* L_45 = V_11;
+			int32_t L_46 = V_9;
+			NullCheck(L_45);
+			InterfaceActionInvoker1< int32_t >::Invoke(0 /* System.Void UnityEngine.UI.ICanvasElement::Rebuild(UnityEngine.UI.CanvasUpdate) */, ICanvasElement_t604A7C95E46ABA335897B34A28DC8E542DA787E9_il2cpp_TypeInfo_var, L_45, L_46);
 		}
 
 IL_0165:
 		{
-			// element.Rebuild((CanvasUpdate)i);
-			RuntimeObject* L_47 = V_13;
-			int32_t L_48 = V_11;
-			NullCheck(L_47);
-			InterfaceActionInvoker1< int32_t >::Invoke(0 /* System.Void UnityEngine.UI.ICanvasElement::Rebuild(UnityEngine.UI.CanvasUpdate) */, ICanvasElement_t604A7C95E46ABA335897B34A28DC8E542DA787E9_il2cpp_TypeInfo_var, L_47, L_48);
-		}
-
-IL_016f:
-		{
-			goto IL_0192;
+			goto IL_0188;
 		}
 	} // end try (depth: 1)
 	catch(Il2CppExceptionWrapper& e)
@@ -19336,97 +19328,103 @@ IL_016f:
 		if(il2cpp_codegen_class_is_assignable_from (((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&Exception_t_il2cpp_TypeInfo_var)), il2cpp_codegen_object_class(e.ex)))
 		{
 			IL2CPP_PUSH_ACTIVE_EXCEPTION(e.ex);
-			goto CATCH_0172;
+			goto CATCH_0168;
 		}
 		throw e;
 	}
 
-CATCH_0172:
+CATCH_0168:
 	{ // begin catch(System.Exception)
 		// catch (Exception e)
-		V_15 = ((Exception_t *)IL2CPP_GET_ACTIVE_EXCEPTION(Exception_t *));
+		V_13 = ((Exception_t *)IL2CPP_GET_ACTIVE_EXCEPTION(Exception_t *));
 		// Debug.LogException(e, m_GraphicRebuildQueue[k].transform);
-		Exception_t * L_49 = V_15;
-		IndexedSet_1_tEB5AA15EF0F17F1A471B6F4FA48ACAEF534C44B7 * L_50 = __this->get_m_GraphicRebuildQueue_6();
-		int32_t L_51 = V_12;
+		Exception_t * L_47 = V_13;
+		IndexedSet_1_tEB5AA15EF0F17F1A471B6F4FA48ACAEF534C44B7 * L_48 = __this->get_m_GraphicRebuildQueue_6();
+		int32_t L_49 = V_10;
+		NullCheck(L_48);
+		RuntimeObject* L_50;
+		L_50 = IndexedSet_1_get_Item_m92D8AF97FD4BA2CF8D8ED9557F856B6678FCA23C(L_48, L_49, /*hidden argument*/((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&IndexedSet_1_get_Item_m92D8AF97FD4BA2CF8D8ED9557F856B6678FCA23C_RuntimeMethod_var)));
 		NullCheck(L_50);
-		RuntimeObject* L_52;
-		L_52 = IndexedSet_1_get_Item_m92D8AF97FD4BA2CF8D8ED9557F856B6678FCA23C(L_50, L_51, /*hidden argument*/((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&IndexedSet_1_get_Item_m92D8AF97FD4BA2CF8D8ED9557F856B6678FCA23C_RuntimeMethod_var)));
-		NullCheck(L_52);
-		Transform_tA8193BB29D4D2C7EC04918F3ED1816345186C3F1 * L_53;
-		L_53 = InterfaceFuncInvoker0< Transform_tA8193BB29D4D2C7EC04918F3ED1816345186C3F1 * >::Invoke(1 /* UnityEngine.Transform UnityEngine.UI.ICanvasElement::get_transform() */, ((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&ICanvasElement_t604A7C95E46ABA335897B34A28DC8E542DA787E9_il2cpp_TypeInfo_var)), L_52);
+		Transform_tA8193BB29D4D2C7EC04918F3ED1816345186C3F1 * L_51;
+		L_51 = InterfaceFuncInvoker0< Transform_tA8193BB29D4D2C7EC04918F3ED1816345186C3F1 * >::Invoke(1 /* UnityEngine.Transform UnityEngine.UI.ICanvasElement::get_transform() */, ((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&ICanvasElement_t604A7C95E46ABA335897B34A28DC8E542DA787E9_il2cpp_TypeInfo_var)), L_50);
 		IL2CPP_RUNTIME_CLASS_INIT(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&Debug_tEB68BCBEB8EFD60F8043C67146DC05E7F50F374B_il2cpp_TypeInfo_var)));
-		Debug_LogException_mE0C50EE1EE5F38196CABAF961EF7E43DD520C29B(L_49, L_53, /*hidden argument*/NULL);
+		Debug_LogException_mE0C50EE1EE5F38196CABAF961EF7E43DD520C29B(L_47, L_51, /*hidden argument*/NULL);
 		IL2CPP_POP_ACTIVE_EXCEPTION();
-		goto IL_0192;
+		goto IL_0188;
 	} // end catch (depth: 1)
 
-IL_0192:
+IL_0188:
 	{
-		// for (var k = 0; k < graphicRebuildQueueCount; k++)
-		int32_t L_54 = V_12;
-		V_12 = ((int32_t)il2cpp_codegen_add((int32_t)L_54, (int32_t)1));
+		// for (var k = 0; k < m_GraphicRebuildQueue.Count; k++)
+		int32_t L_52 = V_10;
+		V_10 = ((int32_t)il2cpp_codegen_add((int32_t)L_52, (int32_t)1));
 	}
 
-IL_0199:
+IL_018f:
 	{
-		// for (var k = 0; k < graphicRebuildQueueCount; k++)
-		int32_t L_55 = V_12;
-		int32_t L_56 = V_1;
-		V_16 = (bool)((((int32_t)L_55) < ((int32_t)L_56))? 1 : 0);
-		bool L_57 = V_16;
-		if (L_57)
+		// for (var k = 0; k < m_GraphicRebuildQueue.Count; k++)
+		int32_t L_53 = V_10;
+		IndexedSet_1_tEB5AA15EF0F17F1A471B6F4FA48ACAEF534C44B7 * L_54 = __this->get_m_GraphicRebuildQueue_6();
+		NullCheck(L_54);
+		int32_t L_55;
+		L_55 = IndexedSet_1_get_Count_m4EE30AAC14007368A2126C07275B8EC643A126C0(L_54, /*hidden argument*/IndexedSet_1_get_Count_m4EE30AAC14007368A2126C07275B8EC643A126C0_RuntimeMethod_var);
+		V_14 = (bool)((((int32_t)L_53) < ((int32_t)L_55))? 1 : 0);
+		bool L_56 = V_14;
+		if (L_56)
 		{
-			goto IL_0146;
+			goto IL_013c;
 		}
 	}
 	{
 		// UnityEngine.Profiling.Profiler.EndSample();
 		Profiler_EndSample_m78C76E709113E225D47687E26EA320E4FC548B71(/*hidden argument*/NULL);
 		// for (var i = (int)CanvasUpdate.PreRender; i < (int)CanvasUpdate.MaxUpdateValue; i++)
-		int32_t L_58 = V_11;
-		V_11 = ((int32_t)il2cpp_codegen_add((int32_t)L_58, (int32_t)1));
+		int32_t L_57 = V_9;
+		V_9 = ((int32_t)il2cpp_codegen_add((int32_t)L_57, (int32_t)1));
 	}
 
 IL_01b1:
 	{
 		// for (var i = (int)CanvasUpdate.PreRender; i < (int)CanvasUpdate.MaxUpdateValue; i++)
-		int32_t L_59 = V_11;
-		V_17 = (bool)((((int32_t)L_59) < ((int32_t)5))? 1 : 0);
-		bool L_60 = V_17;
-		if (L_60)
+		int32_t L_58 = V_9;
+		V_15 = (bool)((((int32_t)L_58) < ((int32_t)5))? 1 : 0);
+		bool L_59 = V_15;
+		if (L_59)
 		{
-			goto IL_0131;
+			goto IL_0127;
 		}
 	}
 	{
-		// for (int i = 0; i < graphicRebuildQueueCount; ++i)
-		V_18 = 0;
+		// for (int i = 0; i < m_GraphicRebuildQueue.Count; ++i)
+		V_16 = 0;
 		goto IL_01dd;
 	}
 
 IL_01c4:
 	{
 		// m_GraphicRebuildQueue[i].GraphicUpdateComplete();
-		IndexedSet_1_tEB5AA15EF0F17F1A471B6F4FA48ACAEF534C44B7 * L_61 = __this->get_m_GraphicRebuildQueue_6();
-		int32_t L_62 = V_18;
-		NullCheck(L_61);
-		RuntimeObject* L_63;
-		L_63 = IndexedSet_1_get_Item_m92D8AF97FD4BA2CF8D8ED9557F856B6678FCA23C(L_61, L_62, /*hidden argument*/IndexedSet_1_get_Item_m92D8AF97FD4BA2CF8D8ED9557F856B6678FCA23C_RuntimeMethod_var);
-		NullCheck(L_63);
-		InterfaceActionInvoker0::Invoke(3 /* System.Void UnityEngine.UI.ICanvasElement::GraphicUpdateComplete() */, ICanvasElement_t604A7C95E46ABA335897B34A28DC8E542DA787E9_il2cpp_TypeInfo_var, L_63);
-		// for (int i = 0; i < graphicRebuildQueueCount; ++i)
-		int32_t L_64 = V_18;
-		V_18 = ((int32_t)il2cpp_codegen_add((int32_t)L_64, (int32_t)1));
+		IndexedSet_1_tEB5AA15EF0F17F1A471B6F4FA48ACAEF534C44B7 * L_60 = __this->get_m_GraphicRebuildQueue_6();
+		int32_t L_61 = V_16;
+		NullCheck(L_60);
+		RuntimeObject* L_62;
+		L_62 = IndexedSet_1_get_Item_m92D8AF97FD4BA2CF8D8ED9557F856B6678FCA23C(L_60, L_61, /*hidden argument*/IndexedSet_1_get_Item_m92D8AF97FD4BA2CF8D8ED9557F856B6678FCA23C_RuntimeMethod_var);
+		NullCheck(L_62);
+		InterfaceActionInvoker0::Invoke(3 /* System.Void UnityEngine.UI.ICanvasElement::GraphicUpdateComplete() */, ICanvasElement_t604A7C95E46ABA335897B34A28DC8E542DA787E9_il2cpp_TypeInfo_var, L_62);
+		// for (int i = 0; i < m_GraphicRebuildQueue.Count; ++i)
+		int32_t L_63 = V_16;
+		V_16 = ((int32_t)il2cpp_codegen_add((int32_t)L_63, (int32_t)1));
 	}
 
 IL_01dd:
 	{
-		// for (int i = 0; i < graphicRebuildQueueCount; ++i)
-		int32_t L_65 = V_18;
-		int32_t L_66 = V_1;
-		V_19 = (bool)((((int32_t)L_65) < ((int32_t)L_66))? 1 : 0);
-		bool L_67 = V_19;
+		// for (int i = 0; i < m_GraphicRebuildQueue.Count; ++i)
+		int32_t L_64 = V_16;
+		IndexedSet_1_tEB5AA15EF0F17F1A471B6F4FA48ACAEF534C44B7 * L_65 = __this->get_m_GraphicRebuildQueue_6();
+		NullCheck(L_65);
+		int32_t L_66;
+		L_66 = IndexedSet_1_get_Count_m4EE30AAC14007368A2126C07275B8EC643A126C0(L_65, /*hidden argument*/IndexedSet_1_get_Count_m4EE30AAC14007368A2126C07275B8EC643A126C0_RuntimeMethod_var);
+		V_17 = (bool)((((int32_t)L_64) < ((int32_t)L_66))? 1 : 0);
+		bool L_67 = V_17;
 		if (L_67)
 		{
 			goto IL_01c4;
