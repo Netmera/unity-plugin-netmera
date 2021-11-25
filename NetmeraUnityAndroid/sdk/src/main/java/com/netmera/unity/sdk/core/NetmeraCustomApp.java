@@ -20,6 +20,7 @@ public class NetmeraCustomApp extends Application {
     public void onCreate() {
         super.onCreate();
         initNetmera(this);
+        
     }
 
     public static Application getInstance() {
