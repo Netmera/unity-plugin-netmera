@@ -38,7 +38,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-core:18.0.2' // Assets/Netmera/Editor/NetmeraDependencies.xml:16
     implementation 'com.google.firebase:firebase-messaging:21.0.1' // Assets/Netmera/Editor/NetmeraDependencies.xml:17
     implementation 'com.google.firebase:firebase-messaging-unity:7.1.0' // Assets/Firebase/Editor/MessagingDependencies.xml:20
-    implementation 'com.netmera:netmera:3.8.7' // Assets/Netmera/Editor/NetmeraDependencies.xml:15
+    implementation 'com.netmera:netmera:3.8.13-noads' // Assets/Netmera/Editor/NetmeraDependencies.xml:15
 // Android Resolver Dependencies End
 **DEPS**}
 

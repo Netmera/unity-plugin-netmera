@@ -1,3 +1,5 @@
+
+
 using System;
 using System.Runtime.InteropServices;
 using UnityEngine;
@@ -5,7 +7,7 @@ using UnityEngine;
 public class NetmeraPlugin : MonoBehaviour
 {
 
-
+#if UNITY_IOS
 
     [DllImport("__Internal")]
     private static extern void _RequestPushNotificationAuthorization();
@@ -43,64 +45,90 @@ public class NetmeraPlugin : MonoBehaviour
     [DllImport("__Internal")]
     public static extern void _ChangeAllInboxItemStatuses(int status);
 
+    #endif
+
     public static void RequestPushNotificationAuthorization()
     {
-        _RequestPushNotificationAuthorization();
+        #if UNITY_IOS
+            _RequestPushNotificationAuthorization();
+        #endif
     }
 
     public static void SetListener(string listenerName)
     {
-        _SetListener(listenerName);
+        #if UNITY_IOS
+            _SetListener(listenerName);
+        #endif
     }
 
     public static void SendEvent(string key, string parameters)
     {
-        _SendEvent(key, parameters);
+        #if UNITY_IOS
+            _SendEvent(key, parameters);
+        #endif
     }
 
     public static void UpdateUser(string parameters)
     {
-        _UpdateUser(parameters);
+        #if UNITY_IOS
+            _UpdateUser(parameters);
+        #endif
     }
 
     public static void Log(string message)
     {
-        _Log(message);
+        #if UNITY_IOS
+            _Log(message);
+        #endif
     }
 
     public static void EnablePopupPresentation(bool isEnabled)
     {
-        _EnablePopupPresentation(isEnabled);
+        #if UNITY_IOS
+            _EnablePopupPresentation(isEnabled);
+        #endif
     }
 
     public static void RequestLocationAuthorization()
     {
-        _RequestLocationAuthorization();
+        #if UNITY_IOS
+            _RequestLocationAuthorization();
+        #endif
     }
 
     public static void FetchInbox(int pageSize, int status, string categories, bool includeExpiredObjects)
     {
-        _FetchInbox(pageSize, status, categories, includeExpiredObjects);
+        #if UNITY_IOS
+            _FetchInbox(pageSize, status, categories, includeExpiredObjects);
+        #endif
     }
 
     public static void FetchNextPage()
     {
-        _FetchNextPage();
+        #if UNITY_IOS
+            _FetchNextPage();
+        #endif
     }
 
     public static void ChangeInboxItemStatuses(int startIndex, int endIndex, int status)
     {
-        _ChangeInboxItemStatuses(startIndex, endIndex, status);
+        #if UNITY_IOS
+            _ChangeInboxItemStatuses(startIndex, endIndex, status);
+        #endif
     }
 
     public static void GetStatusCount(int status)
     {
-        _GetStatusCount(status);
+        #if UNITY_IOS
+            _GetStatusCount(status);
+        #endif
     }
 
     public static void ChangeAllInboxItemStatuses(int status)
     {
-        _ChangeAllInboxItemStatuses(status);
+        #if UNITY_IOS
+            _ChangeAllInboxItemStatuses(status);
+        #endif
     }
 
 }

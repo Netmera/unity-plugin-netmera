@@ -1,9 +1,9 @@
 {
-    "m_SelectedDeviceId": "12577f2c",
+    "m_SelectedDeviceId": "LGH8505a9e1fd6",
     "m_SelectedPackage": {
-        "deviceId": "12577f2c",
+        "deviceId": "LGH8505a9e1fd6",
         "name": "com.netmera.unity.plugin",
-        "processId": 14207,
+        "processId": 15836,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -96,6 +96,24 @@
             "deviceId": "12577f2c",
             "name": "com.netmera.unity.plugin",
             "processId": 14207,
+            "exited": false
+        },
+        {
+            "deviceId": "4GE4C19A18000022",
+            "name": "com.netmera.unity.plugin",
+            "processId": 30639,
+            "exited": false
+        },
+        {
+            "deviceId": "LGH8505a9e1fd6",
+            "name": "com.netmera.unity.plugin",
+            "processId": 14957,
+            "exited": false
+        },
+        {
+            "deviceId": "LGH8505a9e1fd6",
+            "name": "com.netmera.unity.plugin",
+            "processId": 15836,
             "exited": false
         }
     ],
