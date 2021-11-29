@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "LGH8505a9e1fd6",
         "name": "com.netmera.unity.plugin",
-        "processId": 15836,
+        "processId": 8433,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -108,12 +108,24 @@
             "deviceId": "LGH8505a9e1fd6",
             "name": "com.netmera.unity.plugin",
             "processId": 14957,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "LGH8505a9e1fd6",
             "name": "com.netmera.unity.plugin",
             "processId": 15836,
+            "exited": true
+        },
+        {
+            "deviceId": "LGH8505a9e1fd6",
+            "name": "com.netmera.unity.plugin",
+            "processId": 7798,
+            "exited": true
+        },
+        {
+            "deviceId": "LGH8505a9e1fd6",
+            "name": "com.netmera.unity.plugin",
+            "processId": 8433,
             "exited": false
         }
     ],
@@ -167,7 +179,7 @@
         "MemoryGroup": 2,
         "Behavior": 0
     },
-    "m_Filter": "NETMERA",
-    "m_FilterIsRegularExpression": false,
+    "m_Filter": "",
+    "m_FilterIsRegularExpression": true,
     "m_SymbolPaths": []
 }
