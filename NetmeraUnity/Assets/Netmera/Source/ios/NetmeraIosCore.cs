@@ -6,7 +6,7 @@ namespace Netmera
     /*
     sample app ids:
     <key>netmera_mobile_sdkkey</key>
-	<string>GssT_cQQM8eKJT6BGOv4Lbiz-P7lj9cb8IO3zBuWbAiAxf1gqwLiwQ</string>
+	<string>FolJgBCBQJRAbEO42Dit77FBlTxmZ9mQIgcjbioswAiNnVj6dMMAeV3hacxNNpeL</string>
     <key>netmera_logging_disabled</key>
     <false/>
     */

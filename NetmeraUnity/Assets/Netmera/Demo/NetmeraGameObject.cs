@@ -39,6 +39,7 @@ public class NetmeraGameObject : MonoBehaviour, Netmera.Callback
     public void Test_UpdateUser()
     {
         NetmeraUser user = new NetmeraUser();
+        user.SetUserID("bsoykal");
         user.SetBirthday("1991", "06", "30");
         user.SetCity("Istanbul");
         NetmeraCore.Instance.UpdateUser(user.JsonNode);

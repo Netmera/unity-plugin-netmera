@@ -3,23 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>625026371683-6nktlffhlcispd8guse8hu72e9g7946t.apps.googleusercontent.com</string>
+	<string>675460424491-77lsa5e2tfq2ofmslr54kmkvqiti1k57.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.625026371683-6nktlffhlcispd8guse8hu72e9g7946t</string>
-	<key>ANDROID_CLIENT_ID</key>
-	<string>625026371683-sm86cj3koobburs6p6fkpcuvee2idp35.apps.googleusercontent.com</string>
+	<string>com.googleusercontent.apps.675460424491-77lsa5e2tfq2ofmslr54kmkvqiti1k57</string>
 	<key>API_KEY</key>
-	<string>AIzaSyAYQ0Zq2mvCRqtUU651WQrnwlPv_TRV35Y</string>
+	<string>AIzaSyD0_8rUdAQGkqQohc-1h0bPAvcy4CJCq9I</string>
 	<key>GCM_SENDER_ID</key>
-	<string>625026371683</string>
+	<string>675460424491</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.test.netmera.unity</string>
 	<key>PROJECT_ID</key>
-	<string>netmeraplugin</string>
+	<string>netmeracrossplatforms</string>
 	<key>STORAGE_BUCKET</key>
-	<string>netmeraplugin.appspot.com</string>
+	<string>netmeracrossplatforms.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -31,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:625026371683:ios:579a29fe5f8c44703a2856</string>
+	<string>1:675460424491:ios:4d5eac82183f461e281b6e</string>
 </dict>
 </plist>

@@ -43,8 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76ee4b20acb6c0b4086738b3b9d305e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fcmSenderId: 625026371683
-  netmeraSdkKey: GssT_cQQM8eKJT6BGOv4Lbiz-P7lj9cb8IO3zBuWbAiAxf1gqwLiwQ
+  fcmSenderId: 675460424491
+  netmeraSdkKey: FolJgBCBQJRAbEO42Dit77FBlTxmZ9mQIgcjbioswAiNnVj6dMMAeV3hacxNNpeL
   loggingEnabled: 1
   popupPresentationEnabled: 0
   baseUrl: 

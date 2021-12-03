@@ -1,10 +1,7 @@
 package com.netmera.unity.sdk.core;
 
 import android.app.Activity;
-import android.os.Handler;
-import android.os.Looper;
 
-import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.gson.Gson;
 import com.netmera.Netmera;
 import com.netmera.NetmeraError;

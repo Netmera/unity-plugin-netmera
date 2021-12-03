@@ -6,7 +6,6 @@ import com.netmera.NetmeraInbox;
 import com.netmera.NetmeraPushObject;
 import com.netmera.unity.sdk.core.NetmeraCustomApp;
 import com.netmera.unity.sdk.core.NetmeraPlugin;
-import com.netmera.unity.sdk.core.NetmeraPluginImpl;
 
 import org.json.JSONArray;
 import org.json.JSONObject;

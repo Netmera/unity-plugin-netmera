@@ -36,3 +36,18 @@ dependencies {
     implementation 'com.google.firebase:firebase-messaging:21.0.1'
 //    implementation 'com.google.firebase:firebase-analytics:18.0.2'
 }
+
+task copyAarToUnity {
+    dependsOn("assembleDebug")
+
+    doLast {
+        copy {
+            from('build/outputs/aar') {
+                include 'sdk-debug.aar'
+                rename 'sdk-debug.aar', 'netmerasdk_unity_1.0.0.aar'
+            }
+            into '../../NetmeraUnity/Assets/Plugins/Android'
+        }
+        println("Aar successfully copied!")
+    }
+}

@@ -1,41 +1,33 @@
 {
   "project_info": {
-    "project_number": "625026371683",
-    "project_id": "netmeraplugin",
-    "storage_bucket": "netmeraplugin.appspot.com"
+    "project_number": "675460424491",
+    "project_id": "netmeracrossplatforms",
+    "storage_bucket": "netmeracrossplatforms.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:625026371683:android:0232e9aa5e20e1833a2856",
+        "mobilesdk_app_id": "1:675460424491:android:fb24000b2cd8e14b281b6e",
         "android_client_info": {
           "package_name": "com.netmera.unity.plugin"
         }
       },
       "oauth_client": [
         {
-          "client_id": "625026371683-sm86cj3koobburs6p6fkpcuvee2idp35.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.netmera.unity.plugin",
-            "certificate_hash": "412bd27e3611c7b76c61946799067c7fdde6c2b5"
-          }
-        },
-        {
-          "client_id": "625026371683-csigc35vdn4vfpieh3ha1bdjbprbmk8d.apps.googleusercontent.com",
+          "client_id": "675460424491-lauodsmmbocrss4es084dcq79lt953k0.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDHluHGV1COXeAXIeAjZ9xjjAwJQ1HhTXU"
+          "current_key": "AIzaSyByWFgPVutnGL8TzowVMZrjDnb9WjPOsPw"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "625026371683-csigc35vdn4vfpieh3ha1bdjbprbmk8d.apps.googleusercontent.com",
+              "client_id": "675460424491-lauodsmmbocrss4es084dcq79lt953k0.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
