@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "LGH8505a9e1fd6",
         "name": "com.netmera.unity.plugin",
-        "processId": 2188,
+        "processId": 28463,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -107,139 +107,67 @@
         {
             "deviceId": "LGH8505a9e1fd6",
             "name": "com.netmera.unity.plugin",
-            "processId": 14957,
-            "exited": true
-        },
-        {
-            "deviceId": "LGH8505a9e1fd6",
-            "name": "com.netmera.unity.plugin",
-            "processId": 15836,
-            "exited": true
-        },
-        {
-            "deviceId": "LGH8505a9e1fd6",
-            "name": "com.netmera.unity.plugin",
-            "processId": 7798,
-            "exited": true
-        },
-        {
-            "deviceId": "LGH8505a9e1fd6",
-            "name": "com.netmera.unity.plugin",
-            "processId": 8433,
-            "exited": true
-        },
-        {
-            "deviceId": "LGH8505a9e1fd6",
-            "name": "com.netmera.unity.plugin",
-            "processId": 26318,
-            "exited": false
-        },
-        {
-            "deviceId": "LGH8505a9e1fd6",
-            "name": "com.netmera.unity.plugin",
-            "processId": 29907,
-            "exited": false
-        },
-        {
-            "deviceId": "LGH8505a9e1fd6",
-            "name": "com.netmera.unity.plugin",
-            "processId": 30533,
-            "exited": false
-        },
-        {
-            "deviceId": "LGH8505a9e1fd6",
-            "name": "com.netmera.unity.plugin",
-            "processId": 31365,
-            "exited": false
-        },
-        {
-            "deviceId": "LGH8505a9e1fd6",
-            "name": "com.netmera.unity.plugin",
-            "processId": 31835,
-            "exited": false
-        },
-        {
-            "deviceId": "LGH8505a9e1fd6",
-            "name": "com.netmera.unity.plugin",
-            "processId": 32673,
-            "exited": false
-        },
-        {
-            "deviceId": "LGH8505a9e1fd6",
-            "name": "com.netmera.unity.plugin",
-            "processId": 1636,
-            "exited": false
-        },
-        {
-            "deviceId": "LGH8505a9e1fd6",
-            "name": "com.netmera.unity.plugin",
-            "processId": 2946,
-            "exited": false
-        },
-        {
-            "deviceId": "LGH8505a9e1fd6",
-            "name": "com.netmera.unity.plugin",
-            "processId": 6685,
-            "exited": false
-        },
-        {
-            "deviceId": "LGH8505a9e1fd6",
-            "name": "com.netmera.unity.plugin",
-            "processId": 9137,
-            "exited": false
-        },
-        {
-            "deviceId": "LGH8505a9e1fd6",
-            "name": "com.netmera.unity.plugin",
-            "processId": 10298,
-            "exited": false
-        },
-        {
-            "deviceId": "LGH8505a9e1fd6",
-            "name": "com.netmera.unity.plugin",
-            "processId": 11457,
-            "exited": false
-        },
-        {
-            "deviceId": "LGH8505a9e1fd6",
-            "name": "com.netmera.unity.plugin",
-            "processId": 11970,
-            "exited": false
-        },
-        {
-            "deviceId": "LGH8505a9e1fd6",
-            "name": "com.netmera.unity.plugin",
-            "processId": 12490,
-            "exited": false
-        },
-        {
-            "deviceId": "LGH8505a9e1fd6",
-            "name": "com.netmera.unity.plugin",
-            "processId": 22167,
-            "exited": false
-        },
-        {
-            "deviceId": "LGH8505a9e1fd6",
-            "name": "com.netmera.unity.plugin",
-            "processId": 31805,
-            "exited": false
-        },
-        {
-            "deviceId": "LGH8505a9e1fd6",
-            "name": "com.netmera.unity.plugin",
-            "processId": 32360,
-            "exited": false
-        },
-        {
-            "deviceId": "LGH8505a9e1fd6",
-            "name": "com.netmera.unity.plugin",
             "processId": 441,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "LGH8505a9e1fd6",
             "name": "com.netmera.unity.plugin",
             "processId": 2188,
+            "exited": true
+        },
+        {
+            "deviceId": "LGH8505a9e1fd6",
+            "name": "com.netmera.unity.plugin",
+            "processId": 6031,
+            "exited": true
+        },
+        {
+            "deviceId": "LGH8505a9e1fd6",
+            "name": "com.netmera.unity.plugin",
+            "processId": 6638,
+            "exited": true
+        },
+        {
+            "deviceId": "LGH8505a9e1fd6",
+            "name": "com.netmera.unity.plugin",
+            "processId": 7942,
+            "exited": true
+        },
+        {
+            "deviceId": "LGH8505a9e1fd6",
+            "name": "com.lge.launcher3",
+            "processId": 18786,
+            "exited": false
+        },
+        {
+            "deviceId": "LGH8505a9e1fd6",
+            "name": "com.netmera.unity.plugin",
+            "processId": 10327,
+            "exited": false
+        },
+        {
+            "deviceId": "LGH8505a9e1fd6",
+            "name": "com.netmera.unity.plugin",
+            "processId": 10907,
+            "exited": false
+        },
+        {
+            "deviceId": "LGH8505a9e1fd6",
+            "name": "com.netmera.unity.plugin",
+            "processId": 11945,
+            "exited": false
+        },
+        {
+            "deviceId": "LGH8505a9e1fd6",
+            "name": "com.netmera.unity.plugin",
+            "processId": 14875,
+            "exited": false
+        },
+        {
+            "deviceId": "LGH8505a9e1fd6",
+            "name": "com.netmera.unity.plugin",
+            "processId": 28463,
             "exited": false
         }
     ],

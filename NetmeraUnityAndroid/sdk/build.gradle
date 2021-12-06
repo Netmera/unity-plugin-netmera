@@ -32,7 +32,7 @@ android {
 dependencies {
 //    implementation 'com.netmera:netmera:3.8.7'
     implementation 'com.netmera:netmera:3.8.13-noads'
-    implementation 'com.google.firebase:firebase-core:18.0.2'
+//    implementation 'com.google.firebase:firebase-core:18.0.2'
     implementation 'com.google.firebase:firebase-messaging:21.0.1'
 //    implementation 'com.google.firebase:firebase-analytics:18.0.2'
 }

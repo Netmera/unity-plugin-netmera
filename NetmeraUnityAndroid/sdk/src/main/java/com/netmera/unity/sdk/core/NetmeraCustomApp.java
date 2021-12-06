@@ -4,11 +4,8 @@ import android.app.Application;
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
-import android.os.Handler;
 import android.util.Log;
 
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.netmera.Netmera;
 import com.netmera.unity.sdk.util.Functions;
@@ -50,7 +47,6 @@ public class NetmeraCustomApp extends Application {
             Netmera.disablePopupPresentation();
         }
         FirebaseMessaging.getInstance().setAutoInitEnabled(true);
-        FirebaseAnalytics.getInstance(context).setAnalyticsCollectionEnabled(true);
         Functions.log("init called: fcmSenderId: " + firebaseSenderID + " netmeraSdkKey: " + netmeraSdkKey + " popupPresentationEnabled: " + mPopupDisabled + " baseUrl: " + baseUrl, NetmeraPlugin.LogLevel.INFO);
     }
 
