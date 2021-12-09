@@ -1,15 +1,19 @@
 package com.netmera.unity.sdk.core;
 
+import static com.netmera.unity.sdk.util.SharedPrefUtil.ON_PUSH_BUTTON_CLICKED_KEY;
+import static com.netmera.unity.sdk.util.SharedPrefUtil.ON_PUSH_DISMISS_KEY;
+import static com.netmera.unity.sdk.util.SharedPrefUtil.ON_PUSH_OPEN_KEY;
+import static com.netmera.unity.sdk.util.SharedPrefUtil.ON_PUSH_RECEIVE_KEY;
+
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 
-import com.netmera.NetmeraPushObject;
-import com.netmera.unity.sdk.util.Functions;
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.netmera.unity.sdk.util.SharedPrefUtil;
 
-import org.json.JSONObject;
-
-import java.util.List;
+import java.util.ArrayList;
 
 public class NetmeraPluginImpl extends NetmeraPlugin implements NetmeraPluginPushReceiver.Callback {
 
@@ -18,6 +22,7 @@ public class NetmeraPluginImpl extends NetmeraPlugin implements NetmeraPluginPus
         mInstance = this;
         mUnityBridge = unityBridge;
         NetmeraPluginPushReceiver.setCallback(this);
+        checkPushMessages(activity.getApplicationContext());
     }
 
     @Override
@@ -76,38 +81,61 @@ public class NetmeraPluginImpl extends NetmeraPlugin implements NetmeraPluginPus
     }
 
     @Override
-    public void onPushReceive(Context context, Bundle bundle, NetmeraPushObject netmeraPushObject) {
-        JSONObject json = Functions.convertToJSON(netmeraPushObject);
-        if (mUnityBridge == null || json == null) {
+    public void onPushReceive(Context context, Bundle bundle, String message) {
+        if (mUnityBridge == null) {
             return;
         }
-        mUnityBridge.OnPushReceive(json.toString());
+        mUnityBridge.OnPushReceive(message);
     }
 
     @Override
-    public void onPushOpen(Context context, Bundle bundle, NetmeraPushObject netmeraPushObject) {
-        JSONObject json = Functions.convertToJSON(netmeraPushObject);
-        if (mUnityBridge == null || json == null) {
+    public void onPushOpen(Context context, Bundle bundle, String message) {
+        if (mUnityBridge == null) {
             return;
         }
-        mUnityBridge.OnPushOpen(json.toString());
+        mUnityBridge.OnPushOpen(message);
     }
 
     @Override
-    public void onPushDismiss(Context context, Bundle bundle, NetmeraPushObject netmeraPushObject) {
-        JSONObject json = Functions.convertToJSON(netmeraPushObject);
-        if (mUnityBridge == null || json == null) {
+    public void onPushDismiss(Context context, Bundle bundle, String message) {
+        if (mUnityBridge == null) {
             return;
         }
-        mUnityBridge.OnPushDismiss(json.toString());
+        mUnityBridge.OnPushDismiss(message);
     }
 
     @Override
-    public void onPushButtonClicked(Context context, Bundle bundle, NetmeraPushObject netmeraPushObject) {
-        JSONObject json = Functions.convertToJSON(netmeraPushObject);
-        if (mUnityBridge == null || json == null) {
+    public void onPushButtonClicked(Context context, Bundle bundle, String message) {
+        if (mUnityBridge == null) {
             return;
         }
-        mUnityBridge.OnPushButtonClicked(json.toString());
+        mUnityBridge.OnPushButtonClicked(message);
+    }
+
+    private void checkPushMessages(Context context) {
+        if (mUnityBridge == null) {
+            return;
+        }
+        ArrayList<String> events = (ArrayList<String>) SharedPrefUtil.getMessages(context);
+        for (String event : events) {
+            JsonObject object = new Gson().fromJson(event, JsonObject.class);
+            String key = object.get(SharedPrefUtil.EVENT_KEY).getAsString();
+            String message = object.get(SharedPrefUtil.MESSAGE_KEY).getAsString();
+            switch (key) {
+                case ON_PUSH_RECEIVE_KEY:
+                    mUnityBridge.OnPushReceive(message);
+                    break;
+                case ON_PUSH_OPEN_KEY:
+                    mUnityBridge.OnPushOpen(message);
+                    break;
+                case ON_PUSH_DISMISS_KEY:
+                    mUnityBridge.OnPushDismiss(message);
+                    break;
+                case ON_PUSH_BUTTON_CLICKED_KEY:
+                    mUnityBridge.OnPushButtonClicked(message);
+                    break;
+            }
+        }
+        SharedPrefUtil.deleteMessages(context);
     }
 }

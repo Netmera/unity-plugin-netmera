@@ -114,31 +114,31 @@ namespace Netmera
         ///////////////// Push Callback Methods Start ///////////////////////////////////////
         public override void OnPushRegister(string gcmSenderId, string pushToken)
         {
-            Instance.log($"OnPushRegister {gcmSenderId} {pushToken}");
+            //Instance.log($"OnPushRegister {gcmSenderId} {pushToken}");
             _callback.OnPushRegister(gcmSenderId, pushToken);
         }
 
         public override void OnPushReceive(JSONNode rawPush)
         {
-            Instance.log($"OnPushReceive {rawPush}");
+            //Instance.log($"OnPushReceive {rawPush}");
             _callback.OnPushReceive(rawPush, new NetmeraPushObject(rawPush));
         }
 
         public override void OnPushOpen(JSONNode rawPush)
         {
-            Instance.log($"OnPushOpen {rawPush}");
+            //Instance.log($"OnPushOpen {rawPush}");
             _callback.OnPushOpen(rawPush, new NetmeraPushObject(rawPush));
         }
 
         public override void OnPushDismiss(JSONNode rawPush)
         {
-            Instance.log($"OnPushDismiss {rawPush}");
+            //Instance.log($"OnPushDismiss {rawPush}");
             _callback.OnPushDismiss(rawPush, new NetmeraPushObject(rawPush));
         }
 
         public override void OnPushButtonClicked(JSONNode rawPush)
         {
-            Instance.log($"OnPushButtonClicked {rawPush}");
+            //Instance.log($"OnPushButtonClicked {rawPush}");
             _callback.OnPushButtonClicked(rawPush, new NetmeraPushObject(rawPush));
         }
         ///////////////// Push Callback Methods End ///////////////////////////////////////

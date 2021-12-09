@@ -6,6 +6,10 @@ import android.telecom.Call;
 
 import com.netmera.NetmeraPushBroadcastReceiver;
 import com.netmera.NetmeraPushObject;
+import com.netmera.unity.sdk.util.Functions;
+import com.netmera.unity.sdk.util.SharedPrefUtil;
+
+import org.json.JSONObject;
 
 public class NetmeraPluginPushReceiver extends NetmeraPushBroadcastReceiver {
 
@@ -28,44 +32,69 @@ public class NetmeraPluginPushReceiver extends NetmeraPushBroadcastReceiver {
 
     @Override
     protected void onPushReceive(Context context, Bundle bundle, NetmeraPushObject netmeraPushObject) {
-        if (mCallback == null)
+        JSONObject json = Functions.convertToJSON(netmeraPushObject);
+        if (json == null) {
             return;
-        mCallback.onPushReceive(context, bundle, netmeraPushObject);
+        }
+        String message = json.toString();
+        if (mCallback == null) {
+            SharedPrefUtil.addMessage(context, SharedPrefUtil.ON_PUSH_RECEIVE_KEY, message);
+        } else {
+            mCallback.onPushReceive(context, bundle, message);
+        }
     }
 
     @Override
     protected void onPushOpen(Context context, Bundle bundle, NetmeraPushObject netmeraPushObject) {
-        if (mCallback == null)
+        JSONObject json = Functions.convertToJSON(netmeraPushObject);
+        if (json == null) {
             return;
-        mCallback.onPushOpen(context, bundle, netmeraPushObject);
+        }
+        String message = json.toString();
+        if (mCallback == null) {
+            SharedPrefUtil.addMessage(context, SharedPrefUtil.ON_PUSH_OPEN_KEY, message);
+        } else {
+            mCallback.onPushOpen(context, bundle, message);
+        }
     }
 
     @Override
     protected void onPushDismiss(Context context, Bundle bundle, NetmeraPushObject netmeraPushObject) {
-        //if you want to know when a push is dismissed
-        //NetmeraPlugin.sendPushNotification(netmeraPushObject);
-        if (mCallback == null)
+        JSONObject json = Functions.convertToJSON(netmeraPushObject);
+        if (json == null) {
             return;
-        mCallback.onPushDismiss(context, bundle, netmeraPushObject);
+        }
+        String message = json.toString();
+        if (mCallback == null) {
+            SharedPrefUtil.addMessage(context, SharedPrefUtil.ON_PUSH_DISMISS_KEY, message);
+        } else {
+            mCallback.onPushDismiss(context, bundle, message);
+        }
     }
 
     @Override
     protected void onPushButtonClicked(Context context, Bundle bundle, NetmeraPushObject netmeraPushObject) {
-        //if you want to know when a interactive push button is clicked
-        if (mCallback == null)
+        JSONObject json = Functions.convertToJSON(netmeraPushObject);
+        if (json == null) {
             return;
-        mCallback.onPushButtonClicked(context, bundle, netmeraPushObject);
+        }
+        String message = json.toString();
+        if (mCallback == null) {
+            SharedPrefUtil.addMessage(context, SharedPrefUtil.ON_PUSH_BUTTON_CLICKED_KEY, message);
+        } else {
+            mCallback.onPushButtonClicked(context, bundle, message);
+        }
     }
 
     public interface Callback {
         void onPushRegister(Context context, String gcmSenderId, String pushToken);
 
-        void onPushReceive(Context context, Bundle bundle, NetmeraPushObject netmeraPushObject);
+        void onPushReceive(Context context, Bundle bundle, String message);
 
-        void onPushOpen(Context context, Bundle bundle, NetmeraPushObject netmeraPushObject);
+        void onPushOpen(Context context, Bundle bundle, String message);
 
-        void onPushDismiss(Context context, Bundle bundle, NetmeraPushObject netmeraPushObject);
+        void onPushDismiss(Context context, Bundle bundle, String message);
 
-        void onPushButtonClicked(Context context, Bundle bundle, NetmeraPushObject netmeraPushObject);
+        void onPushButtonClicked(Context context, Bundle bundle, String message);
     }
 }

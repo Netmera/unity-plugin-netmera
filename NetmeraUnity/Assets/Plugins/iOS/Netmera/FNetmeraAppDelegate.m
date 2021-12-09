@@ -117,28 +117,22 @@ NSDictionary* mapPushObject(NetmeraPushObject* pushObject)
 // Take push payload for Push clicked:
 -(void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler
 {
-    [FNetmeraPlugin NMLog:[NSString stringWithFormat:@"didReceiveNotificationResponse recent push: %@",response]];
-    [FNetmeraPlugin didReceiveNotificationResponse:response];
+    if ([response.actionIdentifier isEqual:UNNotificationDismissActionIdentifier]) {
+        [FNetmeraPlugin NMLog:[NSString stringWithFormat:@"onPushDismiss recent push: %@",response]];
+        [FNetmeraPlugin onPushDismiss:response];
+    } else if ([response.actionIdentifier isEqual:UNNotificationDefaultActionIdentifier]) {
+        [FNetmeraPlugin NMLog:[NSString stringWithFormat:@"onPushOpen recent push: %@",response]];
+        [FNetmeraPlugin onPushOpen:response];
+    }
     completionHandler();
-    
 }
-
-// Take push payload for push received:
-/*-(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
-{
-    [FNetmeraPlugin NMLog:[NSString stringWithFormat:@"didReceiveRemoteNotification recent push: %@",userInfo]];
-    [FNetmeraPlugin didReceiveRemoteNotification:userInfo];
-}*/
 
 // Take push payload for push Received on application foreground:
 -(void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler
-{
-    
-    [FNetmeraPlugin NMLog:[NSString stringWithFormat:@"willPresentNotification recent push: %@",notification]];
-    [FNetmeraPlugin willPresentNotification:notification];
-    completionHandler(UNNotificationPresentationOptionAlert);
-    
-    
+{   
+    [FNetmeraPlugin NMLog:[NSString stringWithFormat:@"onPushReceive recent push: %@",notification]];
+    [FNetmeraPlugin onPushReceive:notification];
+    completionHandler(UNNotificationPresentationOptionAlert);   
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
@@ -147,8 +141,6 @@ NSDictionary* mapPushObject(NetmeraPushObject* pushObject)
         return;
     }
     
-    [FNetmeraPlugin didRegisterForRemoteNotificationsWithDeviceToken:stringWithDeviceToken(deviceToken)];
+    [FNetmeraPlugin onPushRegister:stringWithDeviceToken(deviceToken)];
 }
-
-
 @end

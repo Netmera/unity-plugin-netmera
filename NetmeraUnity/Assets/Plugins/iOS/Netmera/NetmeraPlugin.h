@@ -1,9 +1,9 @@
 
 @interface FNetmeraPlugin : NSObject
-    +(void)willPresentNotification:(UNNotification*)notification;
-    +(void)didReceiveRemoteNotification:(NSDictionary*)userInfo;
-    +(void)didReceiveNotificationResponse:(UNNotificationResponse *)response;
-    +(void)didRegisterForRemoteNotificationsWithDeviceToken:(NSString*)deviceToken;
+    +(void) onPushRegister:(NSString*)deviceToken;
+    +(void) onPushReceive:(UNNotification*)notification;
+    +(void) onPushDismiss:(UNNotificationResponse*)response;
+    +(void) onPushOpen:(UNNotificationResponse *)response;
     +(void) NMLog:(NSString*) message;
     +(void) init:(BOOL)printLogs;
     +(void) setListener:(NSString*)unityListenerName;

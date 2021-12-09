@@ -3,66 +3,78 @@ using System;
 
 namespace Netmera
 {
-
     public class NetmeraIosCallback : MonoBehaviour
     {
-        public static void NewInstance(string callbackName) {
+        public static void NewInstance(string callbackName)
+        {
             GameObject nmCallback = new GameObject();
             nmCallback.name = callbackName;
             nmCallback.AddComponent<NetmeraIosCallback>();
         }
-        public void  willPresentNotification(string netmeraPushObjectJSON) {
-            NetmeraCore.Instance.OnPushReceive(JSON.Parse(netmeraPushObjectJSON));
-        }
-
-         public void  didReceiveRemoteNotification(string netmeraPushObjectJSON) {
-            NetmeraCore.Instance.OnPushReceive(JSON.Parse(netmeraPushObjectJSON));
-        }
-
-         public void  didReceiveNotificationResponse(string netmeraPushObjectJSON) {
-            NetmeraCore.Instance.OnPushOpen(JSON.Parse(netmeraPushObjectJSON));
-        }
-
-         public void  didRegisterForRemoteNotificationsWithDeviceToken(string token) {
+        
+        public void onPushRegister(string token)
+        {
             NetmeraCore.Instance.OnPushRegister("", token);
         }
 
-        public void fetchInboxFail(string empty) {
+        public void onPushReceive(string netmeraPushObjectJSON)
+        {
+            NetmeraCore.Instance.OnPushReceive(JSON.Parse(netmeraPushObjectJSON));
+        }
+        
+        public void onPushDismiss(string netmeraPushObjectJSON)
+        {
+            NetmeraCore.Instance.OnPushDismiss(JSON.Parse(netmeraPushObjectJSON));
+        }
+        public void onPushOpen(string netmeraPushObjectJSON)
+        {
+            NetmeraCore.Instance.OnPushOpen(JSON.Parse(netmeraPushObjectJSON));
+        }
+        
+        public void fetchInboxFail(string empty)
+        {
             NetmeraCore.Instance.OnInboxFetchFail(1, "fetchInboxFailed");
         }
 
-        public void fetchInboxSuccess(string inboxJSON) {
+        public void fetchInboxSuccess(string inboxJSON)
+        {
             NetmeraCore.Instance.OnInboxFetchSuccess(JSON.Parse(inboxJSON));
         }
 
-        public void fetchNextPageFail(string empty) {
+        public void fetchNextPageFail(string empty)
+        {
             NetmeraCore.Instance.OnInboxNextPageFetchFail(1, "fetchNextPageFailed");
         }
 
-        public void fetchNextPageSuccess(string inboxJSON) {
+        public void fetchNextPageSuccess(string inboxJSON)
+        {
             NetmeraCore.Instance.OnInboxNextPageFetchSuccess(JSON.Parse(inboxJSON));
         }
 
-        public void changeInboxItemStatusesFail(string empty) {
+        public void changeInboxItemStatusesFail(string empty)
+        {
             NetmeraCore.Instance.OnInboxStatusChangeFail(1, "changeInboxItemStatusesFailed");
         }
 
-        public void changeInboxItemStatusesSuccess(string ok) {
+        public void changeInboxItemStatusesSuccess(string ok)
+        {
             NetmeraCore.Instance.OnInboxStatusChangeSuccess();
         }
 
-        public void changeAllInboxItemStatusesFail(string empty) {
+        public void changeAllInboxItemStatusesFail(string empty)
+        {
             NetmeraCore.Instance.OnInboxStatusChangeFail(1, "changeAllInboxItemStatusesFailed");
-
         }
 
-        public void changeAllInboxItemStatusesSuccess(string ok) {
+        public void changeAllInboxItemStatusesSuccess(string ok)
+        {
             NetmeraCore.Instance.OnInboxStatusChangeSuccess();
         }
-        
 
-        public void getStatusCount(string count) {
-            int countInt =  Convert.ToInt32(count);
+
+        public void getStatusCount(string count)
+        {
+            int countInt = Convert.ToInt32(count);
             NetmeraCore.Instance.OnInboxStatusCount(countInt);
         }
 
@@ -105,9 +117,5 @@ namespace Netmera
         }
 
         */
-        
-
-        
-
     }
 }

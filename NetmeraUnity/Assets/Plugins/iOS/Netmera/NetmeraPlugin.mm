@@ -14,10 +14,10 @@
 BOOL logsEnabled = NO;
 NSString* unityListener;
 
-NSString* waitingDidReceiveRemoteNotification;
-NSString* waitingDidReceiveNotificationResponse;
-NSString* waitingWillPresentNotification;
-NSString* waitingDeviceToken;
+NSString* waitingOnPushRegister;
+NSString* waitingOnPushReceive;
+NSString* waitingOnPushOpen;
+NSString* waitingOnPushDismiss;
 NetmeraInbox* netmeraInbox;
 BOOL hasNoMoreNextPage;
 // receiver methods
@@ -81,51 +81,57 @@ NSMutableDictionary* generatePushDictionary(NetmeraPushObject* push) {
     return dictionary;
 }
 
-+(void) willPresentNotification:(UNNotification *)notification {
++(void) onPushReceive:(UNNotification *)notification {
     NSDictionary *userInfo = notification.request.content.userInfo;
     NetmeraPushObject *pushObj = [[NetmeraPushObject alloc] initWithDictionary:userInfo];
-    [FNetmeraPlugin NMLog:[NSString stringWithFormat:@"willPresentNotification pushObj: %@", pushObj]];
+    [FNetmeraPlugin NMLog:[NSString stringWithFormat:@"onPushReceive pushObj: %@", pushObj]];
     
     NSString* push = generatePushObject(pushObj);
     
-    [FNetmeraPlugin NMLog:[NSString stringWithFormat:@"willPresentNotification: %@", push]];
-    if(unityListener == nil) {
-        waitingWillPresentNotification = [NSString stringWithFormat:@"%@", push];
-    }else {
-        NSString* mtd = @"willPresentNotification";
-        SendMessageToUnity(unityListener, mtd, [NSString stringWithFormat:@"%@", push]);
+    [FNetmeraPlugin NMLog:[NSString stringWithFormat:@"onPushReceive: %@", push]];
+    if (unityListener == nil) {
+        waitingOnPushReceive = [NSString stringWithFormat:@"%@", push];
+    } else {
+        SendMessageToUnity(unityListener, @"onPushReceive", [NSString stringWithFormat:@"%@", push]);
     }
 }
 
-+(void)didReceiveRemoteNotification:(NSDictionary *)userInfo{
-    [FNetmeraPlugin NMLog:[NSString stringWithFormat:@"didReceiveRemoteNotification recent: %@",[Netmera recentPushObject]]];
-    //skip
-}
-
-+(void)didReceiveNotificationResponse:(UNNotificationResponse *)response{
++(void) onPushOpen:(UNNotificationResponse *)response{
     NSDictionary *userInfo = response.notification.request.content.userInfo;
     NetmeraPushObject *pushObj = [[NetmeraPushObject alloc] initWithDictionary:userInfo];
-    [FNetmeraPlugin NMLog:[NSString stringWithFormat:@"didReceiveNotificationResponse pushObj: %@", pushObj]];
+    [FNetmeraPlugin NMLog:[NSString stringWithFormat:@"onPushOpen pushObj: %@", pushObj]];
 
     NSString* push = generatePushObject(pushObj);
     
-    [FNetmeraPlugin NMLog:[NSString stringWithFormat:@"didReceiveNotificationResponse: %@", push]];
-    if(unityListener == nil) {
-        waitingDidReceiveNotificationResponse = [NSString stringWithFormat:@"%@", push];
-    }else {
-        NSString* mtd = @"didReceiveNotificationResponse";
-        SendMessageToUnity(unityListener, mtd, [NSString stringWithFormat:@"%@", push]);
+    [FNetmeraPlugin NMLog:[NSString stringWithFormat:@"onPushOpen: %@", push]];
+    if (unityListener == nil) {
+        waitingOnPushOpen = [NSString stringWithFormat:@"%@", push];
+    } else {
+        SendMessageToUnity(unityListener, @"onPushOpen", [NSString stringWithFormat:@"%@", push]);
     }
 }
 
-+(void)didRegisterForRemoteNotificationsWithDeviceToken:(NSString *)deviceToken {
-    
-    [FNetmeraPlugin NMLog:[NSString stringWithFormat:@"didRegisterForRemoteNotificationsWithDeviceToken: %@", deviceToken]];
-    if(unityListener == nil) {
-        waitingDeviceToken = [NSString stringWithFormat:@"%@", deviceToken];
-    }else {
-        NSString* mtd = @"didRegisterForRemoteNotificationsWithDeviceToken";
-        SendMessageToUnity(unityListener, mtd, [NSString stringWithFormat:@"%@", deviceToken]);
++(void) onPushDismiss:(UNNotificationResponse *)response{
+     NSDictionary *userInfo = response.notification.request.content.userInfo;
+     NetmeraPushObject *pushObj = [[NetmeraPushObject alloc] initWithDictionary:userInfo];
+     [FNetmeraPlugin NMLog:[NSString stringWithFormat:@"onPushDismiss pushObj: %@", pushObj]];
+ 
+     NSString* push = generatePushObject(pushObj);
+     
+     [FNetmeraPlugin NMLog:[NSString stringWithFormat:@"onPushDismiss: %@", push]];
+     if (unityListener == nil) {
+         waitingOnPushDismiss = [NSString stringWithFormat:@"%@", push];
+     } else {
+         SendMessageToUnity(unityListener, @"onPushDismiss", [NSString stringWithFormat:@"%@", push]);
+     }
+ }
+
++(void) onPushRegister:(NSString *)deviceToken {
+    [FNetmeraPlugin NMLog:[NSString stringWithFormat:@"onPushRegister: %@", deviceToken]];
+    if (unityListener == nil) {
+        waitingOnPushRegister = [NSString stringWithFormat:@"%@", deviceToken];
+    } else {
+        SendMessageToUnity(unityListener, @"onPushRegister", [NSString stringWithFormat:@"%@", deviceToken]);
     }
 }
 
@@ -144,27 +150,22 @@ NSMutableDictionary* generatePushDictionary(NetmeraPushObject* push) {
     unityListener = unityListenerName;
     [FNetmeraPlugin NMLog:[NSString stringWithFormat:@"setListener: %@", unityListener]];
 
-    if(waitingDidReceiveNotificationResponse !=nil) {
-        NSString* mtd = @"didReceiveNotificationResponse";
-        SendMessageToUnity(unityListener, mtd, [NSString stringWithFormat:@"%@", waitingDidReceiveNotificationResponse]);
-        waitingDidReceiveNotificationResponse = nil;
+    if(waitingOnPushRegister !=nil) {
+        SendMessageToUnity(unityListener, @"onPushRegister", [NSString stringWithFormat:@"%@", waitingOnPushRegister]);
+        waitingOnPushRegister = nil;
     }
-    if(waitingDidReceiveRemoteNotification !=nil) {
-        NSString* mtd = @"didReceiveRemoteNotification";
-        SendMessageToUnity(unityListener, mtd, [NSString stringWithFormat:@"%@", waitingDidReceiveRemoteNotification]);
-        waitingDidReceiveRemoteNotification = nil;
+    if(waitingOnPushReceive !=nil) {
+        SendMessageToUnity(unityListener, @"onPushReceive", [NSString stringWithFormat:@"%@", waitingOnPushReceive]);
+        waitingOnPushReceive = nil;
     }
-    if(waitingWillPresentNotification != nil) {
-        NSString* mtd = @"willPresentNotification";
-        SendMessageToUnity(unityListener, mtd, [NSString stringWithFormat:@"%@", waitingWillPresentNotification]);
-        waitingWillPresentNotification = nil;
+    if(waitingOnPushOpen != nil) {
+        SendMessageToUnity(unityListener, @"onPushOpen", [NSString stringWithFormat:@"%@", waitingOnPushOpen]);
+        waitingOnPushOpen = nil;
     }
-    if(waitingDeviceToken != nil) {
-        NSString* mtd = @"didRegisterForRemoteNotificationsWithDeviceToken";
-        SendMessageToUnity(unityListener, mtd, [NSString stringWithFormat:@"%@", waitingDeviceToken]);
-        waitingDeviceToken = nil;
+    if(waitingOnPushDismiss != nil) {
+        SendMessageToUnity(unityListener, @"onPushDismiss", [NSString stringWithFormat:@"%@", waitingOnPushDismiss]);
+        waitingOnPushDismiss = nil;
     }
-
 }
 
 +(void)sendEvent:(NSString*)eventKey withParams:(NSDictionary*)params
