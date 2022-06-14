@@ -2,16 +2,16 @@ package com.netmera.unity.sdk.core;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.telecom.Call;
 
-import com.netmera.NetmeraPushBroadcastReceiver;
+import com.netmera.NetmeraCarouselObject;
 import com.netmera.NetmeraPushObject;
+import com.netmera.callbacks.NMPushActionCallbacks;
 import com.netmera.unity.sdk.util.Functions;
 import com.netmera.unity.sdk.util.SharedPrefUtil;
 
 import org.json.JSONObject;
 
-public class NetmeraPluginPushReceiver extends NetmeraPushBroadcastReceiver {
+public class NetmeraPluginPushReceiver implements NMPushActionCallbacks {
 
     private static Callback mCallback;
 
@@ -24,14 +24,14 @@ public class NetmeraPluginPushReceiver extends NetmeraPushBroadcastReceiver {
     }
 
     @Override
-    protected void onPushRegister(Context context, String gcmSenderId, String pushToken) {
+    public void onPushRegister(Context context, String gcmSenderId, String pushToken) {
         if (mCallback == null)
             return;
         mCallback.onPushRegister(context, gcmSenderId, pushToken);
     }
 
     @Override
-    protected void onPushReceive(Context context, Bundle bundle, NetmeraPushObject netmeraPushObject) {
+    public void onPushReceive(Context context, Bundle bundle, NetmeraPushObject netmeraPushObject) {
         JSONObject json = Functions.convertToJSON(netmeraPushObject);
         if (json == null) {
             return;
@@ -45,7 +45,7 @@ public class NetmeraPluginPushReceiver extends NetmeraPushBroadcastReceiver {
     }
 
     @Override
-    protected void onPushOpen(Context context, Bundle bundle, NetmeraPushObject netmeraPushObject) {
+    public void onPushOpen(Context context, Bundle bundle, NetmeraPushObject netmeraPushObject) {
         JSONObject json = Functions.convertToJSON(netmeraPushObject);
         if (json == null) {
             return;
@@ -59,7 +59,7 @@ public class NetmeraPluginPushReceiver extends NetmeraPushBroadcastReceiver {
     }
 
     @Override
-    protected void onPushDismiss(Context context, Bundle bundle, NetmeraPushObject netmeraPushObject) {
+    public void onPushDismiss(Context context, Bundle bundle, NetmeraPushObject netmeraPushObject) {
         JSONObject json = Functions.convertToJSON(netmeraPushObject);
         if (json == null) {
             return;
@@ -73,7 +73,7 @@ public class NetmeraPluginPushReceiver extends NetmeraPushBroadcastReceiver {
     }
 
     @Override
-    protected void onPushButtonClicked(Context context, Bundle bundle, NetmeraPushObject netmeraPushObject) {
+    public void onPushButtonClicked(Context context, Bundle bundle, NetmeraPushObject netmeraPushObject) {
         JSONObject json = Functions.convertToJSON(netmeraPushObject);
         if (json == null) {
             return;
@@ -84,6 +84,11 @@ public class NetmeraPluginPushReceiver extends NetmeraPushBroadcastReceiver {
         } else {
             mCallback.onPushButtonClicked(context, bundle, message);
         }
+    }
+
+    @Override
+    public void onCarouselObjectSelected(Context context, Bundle bundle, NetmeraPushObject netmeraPushObject, int i, NetmeraCarouselObject netmeraCarouselObject) {
+
     }
 
     public interface Callback {

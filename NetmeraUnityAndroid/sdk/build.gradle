@@ -30,9 +30,19 @@ android {
 
 
 dependencies {
-//    implementation 'com.netmera:netmera:3.8.7'
-    implementation 'com.netmera:netmera:3.8.13-noads'
+    implementation 'com.netmera:nmcore:3.9.4-noads'
+    implementation 'com.netmera:nmfcm:3.9.3-noads'
+    implementation 'com.netmera:nmhms:3.9.4-noads'
+    implementation 'com.netmera:nmhms:3.9.4-noads'
+    implementation 'androidx.core:core:1.1.0'
+    implementation 'com.google.android.material:material:1.4.0'
     implementation 'com.google.firebase:firebase-messaging:21.0.1'
+
+    implementation("androidx.appcompat:appcompat:1.3.1") {
+        version {
+            strictly '1.3.1'
+        }
+    }
 }
 
 task copyAarToUnity {

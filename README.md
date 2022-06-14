@@ -9,7 +9,7 @@ Download external-dependency-manager-1.2.164.unitypackage from NetmeraPackages f
 Download FirebaseMessaging.unitypackage from NetmeraPackages folder and import it into your project. (Please do not uncheck any file while importing)  
   
 **Step 3 - Importing Netmera**  
-Download netmera-unity-1.1.1.noads.unitypackage from NetmeraPackages folder and import it into your project.  
+Download netmera-unity-1.1.4.noads.unitypackage from NetmeraPackages folder and import it into your project.  
   
 **Step 4.1 For Android - Adding a google-services.json file**  
 Download google-services.json file from Firebase console panel( More info at: https://firebase.google.com/docs/cloud-messaging/android/client#add_a_firebase_configuration_file )  
@@ -93,7 +93,6 @@ Note: While building your app, If you get duplicate class error, please check th
     implementation 'com.google.firebase:firebase-common:19.5.0' // Assets/Firebase/Editor/AppDependencies.xml:13  
     implementation 'com.google.firebase:firebase-messaging:21.0.1' // Assets/Firebase/Editor/MessagingDependencies.xml:13  
     implementation 'com.google.firebase:firebase-messaging-unity:7.1.0' // Assets/Firebase/Editor/MessagingDependencies.xml:20  
-    implementation 'com.netmera:netmera:3.8.13-noads' // Assets/Netmera/Editor/NetmeraDependencies.xml:5  
 
   
 **Step 8 - Enable Multidex**  
@@ -110,11 +109,12 @@ Note: It is important to edit your Main AndroidManifest.xml file since there may
 Use Netmera SDK's application class and add required meta-data tags:  
       
      <application android:name="com.netmera.unity.sdk.core.NetmeraCustomApp"> 
-	     <meta-data android:name="netmera_mobile_sdkkey" android:value="Netmera Modile SDK key string value. Copy It From Netmera Dashboard."/>    
-        <meta-data android:name="netmera_firebase_senderid" android:value="Firebase Sender ID as number. Copy it from Netmera Dashboard."/>    
-         <meta-data  android:name="netmera_optional_baseurl" android:value=""/>     
-    	 <meta-data android:name="netmera_logging_disabled" android:value="false"/>  
-         <meta-data android:name="netmera_popup_presentation_disabled" android:value="false"/>     
+        <meta-data android:name="netmera_mobile_sdkkey" android:value="Netmera Modile SDK key string value. Copy It From Netmera Dashboard."/>    
+        <meta-data android:name="netmera_firebase_senderid" android:value="Firebase Sender ID as number. Copy it from Netmera Dashboard."/>
+        <meta-data android:name="netmera_huawei_senderid" android:value="Huawei Sender ID as number. Copy it from Netmera Dashboard."/>    
+        <meta-data android:name="netmera_optional_baseurl" android:value=""/>     
+        <meta-data android:name="netmera_logging_disabled" android:value="false"/>  
+        <meta-data android:name="netmera_popup_presentation_disabled" android:value="false"/>     
      </application>  
 
 Note: If using Netmera's Application class is not possible for you, you need to add this line to your own Application class' onCreate method rather than referencing to NetmeraCustomApp.  
