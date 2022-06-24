@@ -1,6 +1,6 @@
 <dependencies>
     <iosPods>
-        <iosPod name="Netmera" version="~> 3.14.10-WithoutDependency" minTargetSdk="10.0">
+        <iosPod name="Netmera/NetmeraWithoutAdId" version="~> 3.14.10-WithoutDependency" minTargetSdk="10.0">
         </iosPod>
     </iosPods>
     <androidPackages>

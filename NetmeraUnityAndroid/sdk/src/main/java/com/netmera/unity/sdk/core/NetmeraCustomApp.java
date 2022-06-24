@@ -40,6 +40,7 @@ public class NetmeraCustomApp extends Application {
         NetmeraConfiguration.Builder netmeraConfiguration = new NetmeraConfiguration.Builder()
                 .firebaseSenderId(String.valueOf(firebaseSenderId))
                 .apiKey(netmeraSdkKey)
+                .nmPushActionCallbacks(new NetmeraPluginPushReceiver())
                 .logging(!getBoolMetadata(context, "netmera_logging_disabled"));
 
         if (huaweiSenderId > 0) {
