@@ -65,7 +65,7 @@ NSMutableDictionary* generatePushDictionary(NetmeraPushObject* push) {
     }
     
     if(push.action !=nil) {
-        dictionary[@"deeplinkUrl"] = push.action.deeplinkURL;
+        dictionary[@"deeplinkUrl"] = push.action.deeplinkURLString;
 
     }
     if(push.alert != nil) {
