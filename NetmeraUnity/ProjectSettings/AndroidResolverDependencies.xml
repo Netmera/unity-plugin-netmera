@@ -10,7 +10,6 @@
     <package>com.google.firebase:firebase-messaging-unity:7.1.0</package>
     <package>com.netmera:nmcore:3.9.4-noads</package>
     <package>com.netmera:nmfcm:3.9.3-noads</package>
-    <package>com.netmera:nmhms:3.9.4-noads</package>
   </packages>
   <files>
     <file>Assets/GeneratedLocalRepo/Firebase/m2repository/com/google/firebase/firebase-app-unity/7.1.0/firebase-app-unity-7.1.0.aar</file>
