@@ -34,7 +34,9 @@
         <meta-data
                 android:name="netmera_firebase_senderid"
                 android:value="675460424491"/>
-
+        <meta-data
+                android:name="netmera_huawei_senderid"
+                android:value="107405019"/>
         <meta-data
                 android:name="netmera_optional_baseurl"
                 android:value=""/>
@@ -44,6 +46,6 @@
         <meta-data
                 android:name="netmera_popup_presentation_disabled"
                 android:value="false"/>
-
+        <meta-data android:name="com.huawei.hms.client.appid" android:value="appid=107405019" />
     </application>
 </manifest>
