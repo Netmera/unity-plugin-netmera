@@ -44,7 +44,7 @@ public class NetmeraCustomApp extends Application {
                 .logging(!getBoolMetadata(context, "netmera_logging_disabled"));
 
         if (huaweiSenderId > 0) {
-            netmeraConfiguration.huaweiSenderId(String.valueOf(firebaseSenderId));
+            netmeraConfiguration.huaweiSenderId(String.valueOf(huaweiSenderId));
         }
 
         NetmeraPlugin.mIsInitialized = true;
