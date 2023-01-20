@@ -21,7 +21,7 @@ namespace Netmera {
         private const string notificationServiceFilePath = serviceExtensionName + "/NotificationService.swift";
         private const string notificationServiceBridgingHeaderPath = serviceExtensionName + "/NetmeraUnityNotificationServiceExtension-Bridging-Header.h";
         private const string dependenciesFilePath = editorFolderPath + "NetmeraDependencies.xml";
-        private static string appGroupName = "group.com." + PlayerSettings.applicationIdentifier;
+        private static string appGroupName = "group." + PlayerSettings.applicationIdentifier;
         private static string targetName = "Unity-iPhone";
 
         
@@ -29,7 +29,6 @@ namespace Netmera {
         public static void OnPostProcessBuildAttribute(BuildTarget target, string pathToBuiltProject) {
             string podfilePath = pathToBuiltProject + "/" + "Podfile";
             AddTargetsToPodFile(podfilePath);
-            // AddProjectCapabilities(pathToBuiltProject);
         }
 
         [PostProcessBuild]
@@ -56,11 +55,11 @@ namespace Netmera {
 
                 proj.AddFileToBuild (notificationServiceTarget, proj.AddFile (notificationServiceFilePath, notificationServiceFilePath));
                 proj.AddFile (notificationServicePlistPath, notificationServicePlistPath);
-                proj.AddFile (notificationServiceBridgingHeaderPath, notificationServiceBridgingHeaderPath);
+                proj.AddFile (notificationServiceBridgingHeaderPath, notificationServiceBridgingHeaderPath);  
 
-                
                 SetBuildProperties(proj, notificationServiceTarget);
-                                
+                AddProjectCapabilities(proj, pathToBuiltProject);
+
                 proj.WriteToFile (projPath);
             }  
         }
@@ -102,28 +101,22 @@ namespace Netmera {
             proj.SetBuildProperty(target, "DEVELOPMENT_TEAM", PlayerSettings.iOS.appleDeveloperTeamID);
         }
         
-        private static void AddProjectCapabilities(string projectPath) {
-            string pbxPath = PBXProject.GetPBXProjectPath(projectPath);
-            PBXProject proj = new PBXProject();
-            proj.ReadFromFile (projectPath);
+        private static void AddProjectCapabilities(PBXProject proj, string pathToBuiltProject) {
+            string pbxPath = PBXProject.GetPBXProjectPath(pathToBuiltProject);
             var targetGuid = proj.GetUnityMainTargetGuid();
 
             string entitlementsFileName = targetName + ".entitlements";
             string entitlementsPath = targetName + "/" + entitlementsFileName;
-
-            Debug.Log($"Deneme");
-
+        
             var entitlementsPlist = new PlistDocument();
             entitlementsPlist.root.SetString("aps-environment", "development");
             PlistElementArray appGroupsArray = entitlementsPlist.root.CreateArray("com.apple.security.application-groups");
             appGroupsArray.AddString(appGroupName);
-            File.WriteAllText(projectPath + "/" + entitlementsPath, entitlementsPlist.WriteToString());
-            
+            File.WriteAllText(pathToBuiltProject + "/" + entitlementsPath, entitlementsPlist.WriteToString());
+
             proj.AddFile(entitlementsPath, entitlementsPath);
             proj.SetBuildProperty(targetGuid, "CODE_SIGN_ENTITLEMENTS", entitlementsPath);
             
-            Debug.Log($"pbxPath {pbxPath}");
-
             var projCapability = new ProjectCapabilityManager(pbxPath, entitlementsFileName, targetName);
 
             Debug.Log($"projCapability {projCapability}");
