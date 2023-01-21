@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>netmera_logging_disabled</key>
+	<false/>
+	<key>netmera_mobile_sdkkey</key>
+	<string>YOUR_MOBILE_SDK_KEY</string>
+
+	<!-- OPTIONALS-->
+	<key>netmera_popup_presentation_disabled</key>
+	<false/>
+	<key>netmera_optional_baseurl</key>
+	<string>YOUR_BASE_URL</string>
+	<key>netmera_app_group_name</key>
+	<string>YOUR_GROUP_NAME</string>
+</dict>
+</plist>

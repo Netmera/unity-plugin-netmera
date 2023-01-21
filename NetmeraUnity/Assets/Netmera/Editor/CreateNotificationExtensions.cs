@@ -14,8 +14,8 @@ namespace Netmera {
         
         private const string netmeraFolderPath = "./Assets/Plugins/iOS/Netmera/";
         private const string infoPlist = "/Info.plist";
-        private static string appGroupName = "group." + PlayerSettings.applicationIdentifier;
         private static string targetName = "Unity-iPhone";
+        private static string netmeraInfoPlist = "./Assets/Netmera-Info.plist";
         
         private const string serviceExtensionName = "NetmeraUnityNotificationServiceExtension";
         private const string notificationServicePath = netmeraFolderPath + serviceExtensionName;
@@ -51,10 +51,7 @@ namespace Netmera {
                 string mainTarget = proj.GetUnityMainTargetGuid();
 
                 // Add appGroupName to the project's Info.plist.
-                PlistDocument plist = new PlistDocument();
-                plist.ReadFromString(File.ReadAllText(plistPath));
-                plist.root.SetString("AppGroupName", appGroupName);
-                File.WriteAllText(plistPath, plist.WriteToString());
+                string appGroupName = CopyNetmeraInfoPlist(plistPath);
                 
                 // Copy NotificationServiceExtension folder.
                 if (!File.Exists(serviceExtensionNameDestFolder)) {
@@ -74,14 +71,39 @@ namespace Netmera {
                 AddServiceExtensionFiles(proj, mainTarget);
 
                 // Add necessary NotificationContentExtension files to the target.
-                AddContentExtensionFiles(proj, mainTarget, pathToBuiltProject);
+                AddContentExtensionFiles(proj, mainTarget, pathToBuiltProject, appGroupName);
                 
                 // Add required capabilities to the main project.
-                AddProjectCapabilities(proj, pathToBuiltProject);
+                AddProjectCapabilities(proj, pathToBuiltProject, appGroupName);
 
                 // Write all changes to xcodeproj file.
                 proj.WriteToFile (projPath);
             }  
+        }
+
+        private static string CopyNetmeraInfoPlist(string mainPlistPath) {
+            // Read main plist.
+            PlistDocument mainPlist = new PlistDocument();
+            mainPlist.ReadFromString(File.ReadAllText(mainPlistPath));
+
+            // Read netmera plist.
+            PlistDocument netmeraPlist = new PlistDocument();
+            netmeraPlist.ReadFromString(File.ReadAllText(netmeraInfoPlist));
+
+            // Add netmera plist values as a dictionary to the main plist.
+            string appGroupName = "";
+            foreach (var item in netmeraPlist.root.values) {
+                if (item.Value.GetType() == typeof(PlistElementBoolean)) {
+                    mainPlist.root.SetBoolean(item.Key, item.Value.AsBoolean());
+                } else if (item.Value.GetType() == typeof(PlistElementString)) {
+                    if(item.Key == "netmera_app_group_name") {
+                        appGroupName = item.Value.AsString();
+                    }
+                    mainPlist.root.SetString(item.Key, item.Value.AsString());
+                }
+            }
+            File.WriteAllText(mainPlistPath, mainPlist.WriteToString());
+            return appGroupName;
         }
 
         private static void AddServiceExtensionFiles(PBXProject proj, string mainTarget) {
@@ -92,7 +114,7 @@ namespace Netmera {
             SetBuildProperties(proj, serviceExtensionTarget);
         }
 
-        private static void AddContentExtensionFiles(PBXProject proj, string mainTarget, string pathToBuiltProject) {
+        private static void AddContentExtensionFiles(PBXProject proj, string mainTarget, string pathToBuiltProject, string appGroupName) {
             var contentExtensionTarget = PBXProjectExtensions.AddAppExtension (proj, mainTarget, contentExtensionName, PlayerSettings.GetApplicationIdentifier (BuildTargetGroup.iOS) + "." + contentExtensionName, contentExtensionPlistPath);            
             proj.AddFileToBuild (contentExtensionTarget, proj.AddFile (notificationViewControllerFilePath, notificationViewControllerFilePath));
             proj.AddFileToBuild (contentExtensionTarget, proj.AddFile (contentExtensionMainInterfacePhysicalPath, contentExtensionMainInterfacePath));
@@ -147,7 +169,7 @@ namespace Netmera {
             proj.SetBuildProperty(target, "DEVELOPMENT_TEAM", PlayerSettings.iOS.appleDeveloperTeamID);
         }
         
-        private static void AddProjectCapabilities(PBXProject proj, string pathToBuiltProject) {
+        private static void AddProjectCapabilities(PBXProject proj, string pathToBuiltProject, string appGroupName) {
             string pbxPath = PBXProject.GetPBXProjectPath(pathToBuiltProject);
             var targetGuid = proj.GetUnityMainTargetGuid();
 

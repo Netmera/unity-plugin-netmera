@@ -88,7 +88,7 @@ void initNetmeraAuto(NSDictionary* launchOptions) {
     NSString* baseUrl = [mainBundle objectForInfoDictionaryKey:@"netmera_optional_baseurl"];
     NSNumber* loggingDisabled = [mainBundle objectForInfoDictionaryKey:@"netmera_logging_disabled"];
     NSNumber* netmera_popup_presentation_disabled = [mainBundle objectForInfoDictionaryKey:@"netmera_popup_presentation_disabled"];
-    NSNumber* appGroupName = [mainBundle objectForInfoDictionaryKey:@"AppGroupName"];
+    NSNumber* appGroupName = [mainBundle objectForInfoDictionaryKey:@"netmera_app_group_name"];
     initNetmera(launchOptions, sdkKey , baseUrl, loggingDisabled, netmera_popup_presentation_disabled, appGroupName);
 }
 
