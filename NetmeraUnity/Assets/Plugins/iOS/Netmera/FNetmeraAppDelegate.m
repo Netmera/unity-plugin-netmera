@@ -47,7 +47,7 @@ static NSData *lastPush;
     return [super application:app openURL:url options:options];
 }
 
-void initNetmera(NSDictionary* launchOptions, NSString* netmeraSDKkey, NSString* baseUrl, NSNumber* logDisabled, NSNumber* popupDisabled) {
+void initNetmera(NSDictionary* launchOptions, NSString* netmeraSDKkey, NSString* baseUrl, NSNumber* logDisabled, NSNumber* popupDisabled, NSString* appGroupName) {
     BOOL printLogs = logDisabled ? [logDisabled boolValue] == 0 : false;
     if(printLogs) {
         [Netmera setLogLevel:(NetmeraLogLevelDebug)];
@@ -57,6 +57,7 @@ void initNetmera(NSDictionary* launchOptions, NSString* netmeraSDKkey, NSString*
     // For On-premise setup
     // [Netmera setBaseURL:@"YOUR PANEL DOMAIN URL"];
     // This can be called later, see documentation for details
+    [Netmera setAppGroupName:appGroupName];
     [Netmera setAPIKey:netmeraSDKkey];
     BOOL isPopupEnabled = popupDisabled ?  ![popupDisabled boolValue] : true;
     [Netmera setEnabledPopupPresentation: isPopupEnabled];
@@ -87,7 +88,8 @@ void initNetmeraAuto(NSDictionary* launchOptions) {
     NSString* baseUrl = [mainBundle objectForInfoDictionaryKey:@"netmera_optional_baseurl"];
     NSNumber* loggingDisabled = [mainBundle objectForInfoDictionaryKey:@"netmera_logging_disabled"];
     NSNumber* netmera_popup_presentation_disabled = [mainBundle objectForInfoDictionaryKey:@"netmera_popup_presentation_disabled"];
-    initNetmera(launchOptions, sdkKey , baseUrl, loggingDisabled,netmera_popup_presentation_disabled );
+    NSNumber* appGroupName = [mainBundle objectForInfoDictionaryKey:@"AppGroupName"];
+    initNetmera(launchOptions, sdkKey , baseUrl, loggingDisabled, netmera_popup_presentation_disabled, appGroupName);
 }
 
 NSDictionary* mapPushObject(NetmeraPushObject* pushObject)
