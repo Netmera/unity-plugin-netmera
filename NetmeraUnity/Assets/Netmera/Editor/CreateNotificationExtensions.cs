@@ -12,25 +12,27 @@ namespace Netmera {
 
     public class BuildPostProcessor {
         
-        private const string netmeraFolderPath = "./Assets/Plugins/iOS/Netmera/";
         private const string infoPlist = "/Info.plist";
-        private static string targetName = "Unity-iPhone";
-        private static string netmeraInfoPlist = "./Assets/Netmera-Info.plist";
+        private const string netmeraFolderPath = "./Assets/Plugins/iOS/Netmera/";
+        private const string netmeraInfoPlist = "./Assets/Netmera-Info.plist";
+        private const string targetName = "Unity-iPhone";
         
+        // NotificationServiceExtension
         private const string serviceExtensionName = "NetmeraUnityNotificationServiceExtension";
+        private const string notificationServiceBridgingHeaderPath = serviceExtensionName + "/NetmeraUnityNotificationServiceExtension-Bridging-Header.h";
+        private const string notificationServiceFilePath = serviceExtensionName + "/NotificationService.swift";
         private const string notificationServicePath = netmeraFolderPath + serviceExtensionName;
         private const string notificationServicePlistPath = serviceExtensionName + infoPlist;
-        private const string notificationServiceFilePath = serviceExtensionName + "/NotificationService.swift";
-        private const string notificationServiceBridgingHeaderPath = serviceExtensionName + "/NetmeraUnityNotificationServiceExtension-Bridging-Header.h";
 
+        // NotificationContentExtension
         private const string contentExtensionName = "NetmeraUnityNotificationContentExtension";
-        private const string contentExtensionPath = netmeraFolderPath + contentExtensionName;
-        private const string notificationViewControllerFilePath = contentExtensionName + "/NotificationViewController.swift";
-        private const string contentExtensionPlistPath = contentExtensionName + infoPlist;
         private const string contentExtensionBridgingHeaderPath = contentExtensionName + "/NetmeraUnityNotificationContentExtension-Bridging-Header.h";
         private const string contentExtensionEnitlementsPath = contentExtensionName + "/NetmeraUnityNotificationContentExtension.entitlements";
-        private const string contentExtensionMainInterfacePhysicalPath = contentExtensionName + "/Base.lproj/MainInterface.storyboard";
         private const string contentExtensionMainInterfacePath = contentExtensionName + "/MainInterface.storyboard";
+        private const string contentExtensionMainInterfacePhysicalPath = contentExtensionName + "/Base.lproj/MainInterface.storyboard";
+        private const string contentExtensionPath = netmeraFolderPath + contentExtensionName;
+        private const string contentExtensionPlistPath = contentExtensionName + infoPlist;
+        private const string notificationViewControllerFilePath = contentExtensionName + "/NotificationViewController.swift";
         
         [PostProcessBuildAttribute(45)]
         public static void OnPostProcessBuildAttribute(BuildTarget target, string pathToBuiltProject) {
