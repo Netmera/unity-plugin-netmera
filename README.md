@@ -1,23 +1,46 @@
-
+# unity-netmera-plugin
   
-# unity-netmera  
-  
-  **Step 1- Importing Unity Jar Resolver**  
+## Step 1- Importing Unity Jar Resolver
 Download external-dependency-manager-1.2.164.unitypackage from NetmeraPackages folder and import it into your project.  
   
-**Step 2- Importing Firebase Messaging**  
+## Step 2- Importing Firebase Messaging
 Download FirebaseMessaging.unitypackage from NetmeraPackages folder and import it into your project. (Please do not uncheck any file while importing)  
   
-**Step 3 - Importing Netmera**  
-Download netmera-unity-1.1.4.noads.unitypackage from NetmeraPackages folder and import it into your project.  
-  
-**Step 4.1 For Android - Adding a google-services.json file**  
-Download google-services.json file from Firebase console panel( More info at: https://firebase.google.com/docs/cloud-messaging/android/client#add_a_firebase_configuration_file )  
-Put this file into your Unity application's **Assets** folder. (Note: Path is important. Do not move it anywhere.)  
+## Step 3 - Importing Netmera
+Download latest netmera-unity.noads.unitypackage from NetmeraPackages folder and import it into your project.
 
-**Step 4.2  For Ios - Adding a GoogleService-Info.plist file**  
-Download GoogleService-Info.plist file from Firebase console panel( More info at: https://firebase.google.com/docs/cloud-messaging/ios/client#add-config-file )  
-Put this file into your Unity application's **Assets** folder. (Note: Path is important. Do not move it anywhere.)  
+### Step 3.1 Adding Netmera-Info.plist file
+Add **Netmera-Info.plist** file into your Unity application's **Assets** folder. (Note: Path is important. Do not move it anywhere.)  
+You can find example **Netmera-Info.plist.example** file [here](https://github.com/Netmera/unity-plugin-netmera/blob/main/NetmeraUnity/Assets/Netmera-Info.plist.example). (Don't forget to remove .example extension at the end of the file name.) 
+
+Your **Netmera-Info.plist** file should look like this: 
+
+    <?xml version="1.0" encoding="UTF-8"?>
+    <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+    <plist version="1.0">
+    <dict>
+    	<key>netmera_logging_disabled</key>
+    	<false/>
+    	<key>netmera_mobile_sdkkey</key>
+    	<string>YOUR_MOBILE_SDK_KEY</string>
+    
+    	<!-- OPTIONALS-->
+    	<key>netmera_popup_presentation_disabled</key>
+    	<false/>
+    	<key>netmera_optional_baseurl</key>
+    	<string>YOUR_BASE_URL</string>
+    	<key>netmera_app_group_name</key>
+    	<string>YOUR_GROUP_NAME</string>
+    </dict>
+    </plist>
+  
+### Step 3.2 For Android - Adding a google-services.json file**  
+Download google-services.json file from Firebase console panel (More info at: https://firebase.google.com/docs/cloud-messaging/android/client#add_a_firebase_configuration_file )  
+Put this file into your Unity application's **Assets** folder. (Note: Path is important. Do not move it anywhere.) 
+
+### Step 3.3  For Ios - Adding a GoogleService-Info.plist file**  
+Download GoogleService-Info.plist file from Firebase console panel (More info at: https://firebase.google.com/docs/cloud-messaging/ios/client#add-config-file)  
+Put this file into your Unity application's **Assets** folder. (Note: Path is important. Do not move it anywhere.)
 
 Note: It is better to use custom data feature instead of internal app deeplinking in Unity for forwarding user to a spesific page since there are many steps to implement it outside of Unity Editor. If you want to get data or url after clicking to a notification, you can send it via custom parameters by setting keys and values through Netmera dashboard.
 
@@ -26,33 +49,13 @@ Following steps are divided into two as Android and Ios :
 **IOS ONLY**
 
 Build your project via Unity3D editor. Then open the generated Unity-iPhone.xcworkspace file. Xcode editor will be opened.
-From Signing&Capabilities section inside Xcode, enable Push Notifications and Background Modes(Background Fetch, Remote Notifications, Background Processing,and Location Updates(this is optional))
-
-Open your main Info.plist file inside Xcode Editor and your Netmera SDK key and configurations. Please visit Netmera dashboard for your sdk key:
-
-    <key>netmera_logging_disabled</key>
-	<false/>
-	<key>netmera_mobile_sdkkey</key>
-	<string>YOUR NETMERA SDK KEY</string>
-
-    <!-- OPTIONALS-->
-    <key>netmera_popup_presentation_disabled</key>
-	<false/>
-    <key>netmera_optional_baseurl</key>
-	<string></string>
-
-Then you are ready to run your application by clicking run inside Xcode.
-
-Optional:
-
-If you want to show Carousel push or Media push, you need to perform additional steps inside Xcode. 
-Related documentation can be found in https://developer.netmera.com/en/IOS/Push-Notifications .
+You need to set your signing configurations under Signing & Capabilities section.
+Then you are ready to run your application by clicking run inside the Xcode.
+If you have trouble with Carousel push or Media push, you can find more information [here](https://developer.netmera.com/en/IOS/Push-Notifications).
+**Note:** Every time you build the project from Unity Editor, you must remove the existing iOS project first.
 
 
-
-**ANDROID ONLY**
-
-**Step 5 - Usage of a custom mainTemplate.gradle file.**  
+## Step 4 - Usage of a custom mainTemplate.gradle file.
 Unity Jar Resolver will be used for integration. You already included it by importing FirebaseMessaging.unitypackage.  
   
 Click Project Settings > Publishing Settings > Enable **Custom Main Gradle Template** , **Custom Main Manifest** and **Custom Gradle Properties Template**.  
@@ -61,7 +64,7 @@ There should be two gradle related files **gradleTemplate.properties** and  **ma
   
 Open gradleTemplate.properties file, and append this line **android.useAndroidX=true**  
   
-**Step 6 - Jar Resolver Settings**  
+## Step 5 - Jar Resolver Settings
 Inside Unity Editor's top navigation panel, Click Assets > External Dependency Manager > Android Resolver > Settings.  
   
 The below settings are recommended but not a must. The remaining settings are up to you.  
@@ -75,7 +78,7 @@ Check 'Patch mainTemplate.gradle'
 Check 'Patch gradleTemplate.properties'  
 Check 'Use Jetifier'
   
-**Step 7 - Jar Resolver Resolve Process**  
+## Step 6 - Jar Resolver Resolve Process
   
 Then, Inside Unity Editor's top navigation panel, Click Assets > External Dependency Manager > Android Resolver > Resolve.  
   
@@ -87,7 +90,8 @@ If they are not included, you can try with 'Force Resolve' rather than 'Resolve'
 Note: While building your app, If you get duplicate class error, please check the dependencies and remove the duplicate one.  
 
       
-    implementation 'com.google.android.gms:play-services-base:17.6.0' // Assets/Firebase/Editor/AppDependencies.xml:17     implementation 'com.google.android.gms:play-services-location:18.0.0' // Assets/Netmera/Editor/NetmeraDependencies.xml:6  
+    implementation 'com.google.android.gms:play-services-base:17.6.0' // Assets/Firebase/Editor/AppDependencies.xml:17     
+    implementation 'com.google.android.gms:play-services-location:18.0.0' // Assets/Netmera/Editor/NetmeraDependencies.xml:6  
     implementation 'com.google.firebase:firebase-analytics:18.0.2' // Assets/Firebase/Editor/MessagingDependencies.xml:15  
     implementation 'com.google.firebase:firebase-app-unity:7.1.0' // Assets/Firebase/Editor/AppDependencies.xml:22  
     implementation 'com.google.firebase:firebase-common:19.5.0' // Assets/Firebase/Editor/AppDependencies.xml:13  
@@ -95,14 +99,14 @@ Note: While building your app, If you get duplicate class error, please check th
     implementation 'com.google.firebase:firebase-messaging-unity:7.1.0' // Assets/Firebase/Editor/MessagingDependencies.xml:20  
 
   
-**Step 8 - Enable Multidex**  
+## Step 7 - Enable Multidex
 Open mainTemplate.gradle file, then go to android > defaultConfig section.  
   
 Add a new item as **multiDexEnabled true** .  
   
 If your minSDK version is below 21, you may need additional steps to perform -> https://appmediation.com/unity-enable-multidex/ .  
   
-**Step 9- Editing your AndroidManifest.xml file**  
+## Step 8- Editing your AndroidManifest.xml file
 Open your Unity project's MAIN AndroidManifest.xml file (located at Assets>Plugins>Android>AndroidManifest.xml) and add the following ones inside application tag.  
 Note: It is important to edit your Main AndroidManifest.xml file since there may be multiple AndroidManifest files. Please edit this file: Assets>Plugins>Android>AndroidManifest.xml
     
@@ -121,11 +125,12 @@ Note: If using Netmera's Application class is not possible for you, you need to 
 
      NetmeraCustomApp.initNetmera(this); // this should be an instance of Application class   
 
-**Step 10 -  Demo Scene** 
+## Step 9 - Demo Scene
 We prepared a sample Unity Scene to show the capabilities.   Open **Assets>Netmera>Demo>NetmeraDemoScene**.   
 You can include this scene  to your app in order to test your integration.   
   
-**Step 11 -  Adding Prefab to your first Unity Scene** In your first Unity Scene, import the prefab at Assets>Netmera>Demo>Prefabs> **NetmeraManager**.  
+## Step 10 - Adding Prefab to your first Unity Scene 
+In your first Unity Scene, import the prefab at Assets>Netmera>Demo>Prefabs> **NetmeraManager**.  
 This prefab contains the **NetmeraGameObject** script which shows the usage of all methods of the SDK.  
 Please do not destroy this object while swapping your Unity Scenes. It should not be destroyed.   
   
