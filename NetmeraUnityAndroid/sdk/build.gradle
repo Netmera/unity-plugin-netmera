@@ -30,7 +30,7 @@ android {
 
 
 dependencies {
-    implementation 'com.netmera:nmcore:3.9.7-noads'
+    implementation 'com.netmera:nmcore:3.9.10-noads'
     implementation 'com.netmera:nmfcm:3.9.3-noads'
     implementation 'com.netmera:nmhms:3.9.5-noads'
     implementation 'androidx.core:core:1.1.0'

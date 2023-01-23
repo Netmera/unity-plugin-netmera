@@ -36,8 +36,10 @@ namespace Netmera {
         
         [PostProcessBuildAttribute(45)]
         public static void OnPostProcessBuildAttribute(BuildTarget target, string pathToBuiltProject) {
-            string podfilePath = pathToBuiltProject + "/" + "Podfile";
-            AddTargetsToPodFile(podfilePath);
+            if(target == BuildTarget.iOS) {
+                string podfilePath = pathToBuiltProject + "/" + "Podfile";
+                AddTargetsToPodFile(podfilePath);
+            }
         }
 
         [PostProcessBuild]
