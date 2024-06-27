@@ -1,0 +1,39 @@
+pluginManagement {
+    repositories {
+        **ARTIFACTORYREPOSITORY**
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+
+include ':launcher', ':unityLibrary'
+**INCLUDES**
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+    repositories {
+        **ARTIFACTORYREPOSITORY**
+// Android Resolver Repos Start
+        def unityProjectPath = $/file:///**DIR_UNITYPROJECT**/$.replace("\\", "/")
+        maven {
+            url "https://release.netmera.com/release/android" // Assets/Netmera/Editor/NetmeraDependencies.xml:27
+        }
+        maven {
+            url "https://maven.google.com" // Assets/Netmera/Editor/NetmeraDependencies.xml:27
+        }
+        maven {
+            url "https://developer.huawei.com/repo" // Assets/Netmera/Editor/NetmeraDependencies.xml:27
+        }
+        maven {
+            url (unityProjectPath + "/Assets/GeneratedLocalRepo/Firebase/m2repository") // Assets/Firebase/Editor/AppDependencies.xml:22, Assets/Firebase/Editor/MessagingDependencies.xml:24
+        }
+        mavenLocal()
+// Android Resolver Repos End
+        google()
+        mavenCentral()
+        flatDir {
+            dirs "${project(':unityLibrary').projectDir}/libs"
+        }
+    }
+}
