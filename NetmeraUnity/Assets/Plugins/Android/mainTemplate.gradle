@@ -8,19 +8,18 @@
             url "https://maven.google.com"
         }
         maven {
-            url "http://release.netmera.com/release/android" // Assets/Netmera/Editor/NetmeraDependencies.xml:27
+            url "https://release.netmera.com/release/android" // Assets/Netmera/Editor/NetmeraDependencies.xml:25
         }
         maven {
-            url "https://maven.google.com" // Assets/Netmera/Editor/NetmeraDependencies.xml:27
+            url "https://maven.google.com" // Assets/Netmera/Editor/NetmeraDependencies.xml:25
         }
         maven {
-            url "http://developer.huawei.com/repo" // Assets/Netmera/Editor/NetmeraDependencies.xml:27
+            url "https://developer.huawei.com/repo" // Assets/Netmera/Editor/NetmeraDependencies.xml:25
         }
         maven {
-            url (unityProjectPath + "/Assets/GeneratedLocalRepo/Firebase/m2repository") // Assets/Firebase/Editor/AppDependencies.xml:22, Assets/Firebase/Editor/MessagingDependencies.xml:20
+            url (unityProjectPath + "/Assets/GeneratedLocalRepo/Firebase/m2repository") // Assets/Firebase/Editor/AppDependencies.xml:22, Assets/Firebase/Editor/MessagingDependencies.xml:22
         }
         mavenLocal()
-        jcenter()
         mavenCentral()
     }
 }
@@ -32,27 +31,17 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 // Android Resolver Dependencies Start
     implementation 'androidx.core:core:1.1.0' // Assets/Netmera/Editor/NetmeraDependencies.xml:18
-    implementation 'com.google.android.gms:play-services-base:17.6.0' // Assets/Firebase/Editor/AppDependencies.xml:17
-    implementation 'com.google.firebase:firebase-analytics:18.0.2' // Assets/Firebase/Editor/MessagingDependencies.xml:15
-    implementation 'com.google.firebase:firebase-app-unity:7.1.0' // Assets/Firebase/Editor/AppDependencies.xml:22
-    implementation 'com.google.firebase:firebase-common:19.5.0' // Assets/Firebase/Editor/AppDependencies.xml:13
-    implementation 'com.google.firebase:firebase-messaging:21.0.1' // Assets/Netmera/Editor/NetmeraDependencies.xml:20
-    implementation 'com.google.firebase:firebase-messaging-unity:7.1.0' // Assets/Firebase/Editor/MessagingDependencies.xml:20
-    implementation 'com.huawei.agconnect:agconnect-core:1.5.2.300' // Assets/Netmera/Editor/NetmeraDependencies.xml:21
+    implementation 'com.google.android.gms:play-services-base:18.1.0' // Assets/Firebase/Editor/AppDependencies.xml:17
+    implementation 'com.google.firebase:firebase-analytics:21.2.0' // Assets/Firebase/Editor/MessagingDependencies.xml:15
+    implementation 'com.google.firebase:firebase-app-unity:10.0.0' // Assets/Firebase/Editor/AppDependencies.xml:22
+    implementation 'com.google.firebase:firebase-common:20.2.0' // Assets/Firebase/Editor/AppDependencies.xml:13
+    implementation 'com.google.firebase:firebase-iid:21.1.0' // Assets/Firebase/Editor/MessagingDependencies.xml:17
+    implementation 'com.google.firebase:firebase-messaging:23.1.0' // Assets/Firebase/Editor/MessagingDependencies.xml:13
+    implementation 'com.google.firebase:firebase-messaging-unity:10.0.0' // Assets/Firebase/Editor/MessagingDependencies.xml:22
+    implementation 'com.huawei.agconnect:agconnect-core:1.5.2.300' // Assets/Netmera/Editor/NetmeraDependencies.xml:19
     implementation 'com.netmera:nmcore:3.13.0-noads' // Assets/Netmera/Editor/NetmeraDependencies.xml:15
     implementation 'com.netmera:nmfcm:3.13.0-noads' // Assets/Netmera/Editor/NetmeraDependencies.xml:16
     implementation 'com.netmera:nmhms:3.13.0-noads' // Assets/Netmera/Editor/NetmeraDependencies.xml:17
-    implementation("androidx.appcompat:appcompat:1.3.1") {
-        version {
-            strictly '1.3.1'
-        }
-    }
-    implementation("com.google.android.material:material:1.4.0'") {
-        version {
-            strictly '1.4.0'
-        }
-    }
-
 // Android Resolver Dependencies End
 
 **DEPS**
