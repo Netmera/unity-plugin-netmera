@@ -9,9 +9,9 @@
     <package>com.google.firebase:firebase-messaging:23.1.0</package>
     <package>com.google.firebase:firebase-messaging-unity:10.0.0</package>
     <package>com.huawei.agconnect:agconnect-core:1.5.2.300</package>
-    <package>com.netmera:nmcore:3.13.0-noads</package>
-    <package>com.netmera:nmfcm:3.13.0-noads</package>
-    <package>com.netmera:nmhms:3.13.0-noads</package>
+    <package>com.netmera:nmcore:3.15.3-noads</package>
+    <package>com.netmera:nmfcm:3.13.1-noads</package>
+    <package>com.netmera:nmhms:3.12.1-noads</package>
   </packages>
   <files>
     <file>Assets/GeneratedLocalRepo/Firebase/m2repository/com/google/firebase/firebase-app-unity/10.0.0/firebase-app-unity-10.0.0.aar</file>

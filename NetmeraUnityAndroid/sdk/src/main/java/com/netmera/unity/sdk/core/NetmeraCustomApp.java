@@ -27,24 +27,25 @@ public class NetmeraCustomApp extends Application {
     public static void initNetmera(Application app) {
         mInstance = app;
         Context context = app.getApplicationContext();
-        float firebaseSenderId = getFloatMetadata(context, "netmera_firebase_senderid");
-        float huaweiSenderId = getFloatMetadata(context, "netmera_huawei_senderid");
-        String netmeraSdkKey = getStringMetadata(context, "netmera_mobile_sdkkey");
-        String baseUrl = getStringMetadata(context, "netmera_optional_baseurl");
-        if (firebaseSenderId <= 0 || netmeraSdkKey == null) {
+        String firebaseSenderId = getMetaData(context, "netmera_firebase_senderid");
+        String huaweiSenderId = getMetaData(context, "netmera_huawei_senderid");
+        String netmeraSdkKey = getMetaData(context, "netmera_mobile_sdkkey");
+        String baseUrl = getMetaData(context, "netmera_optional_baseurl");
+        if (firebaseSenderId == null || firebaseSenderId.isEmpty() || netmeraSdkKey == null) {
             Log.d(Functions.LOGTAG, "ERROR: netmera_firebase_senderid or netmera_mobile_sdkkey can not be empty.\nCheck your AndroidManifest.xml file.");
             return;
         }
-        boolean mPopupDisabled = getBoolMetadata(context, "netmera_popup_presentation_disabled");
+        boolean mPopupDisabled = Boolean.parseBoolean(getMetaData(context, "netmera_popup_presentation_disabled"));
+        boolean mIsLoggingEnabled = !Boolean.parseBoolean(getMetaData(context, "netmera_logging_disabled"));
 
         NetmeraConfiguration.Builder netmeraConfiguration = new NetmeraConfiguration.Builder()
-                .firebaseSenderId(String.valueOf(firebaseSenderId))
+                .firebaseSenderId(firebaseSenderId)
                 .apiKey(netmeraSdkKey)
                 .nmPushActionCallbacks(new NetmeraPluginPushReceiver())
-                .logging(!getBoolMetadata(context, "netmera_logging_disabled"));
+                .logging(mIsLoggingEnabled);
 
-        if (huaweiSenderId > 0) {
-            netmeraConfiguration.huaweiSenderId(String.valueOf(huaweiSenderId));
+        if (huaweiSenderId != null && !huaweiSenderId.isEmpty()) {
+            netmeraConfiguration.huaweiSenderId(huaweiSenderId);
         }
 
         NetmeraPlugin.mIsInitialized = true;
@@ -52,49 +53,35 @@ public class NetmeraCustomApp extends Application {
         if (baseUrl != null) {
             Netmera.setBaseUrl(baseUrl);
         }
-        if (!mPopupDisabled) {
-            Netmera.enablePopupPresentation();
-        } else {
+
+        if (mPopupDisabled) {
             Netmera.disablePopupPresentation();
+        } else {
+            Netmera.enablePopupPresentation();
         }
+
         FirebaseMessaging.getInstance().setAutoInitEnabled(true);
-        Functions.log("init called: fcmSenderId: " + firebaseSenderId + " netmeraSdkKey: " + netmeraSdkKey + " popupPresentationEnabled: " + mPopupDisabled + " baseUrl: " + baseUrl, NetmeraPlugin.LogLevel.INFO);
+        Functions.log("init called: fcmSenderId: " + firebaseSenderId + " netmeraSdkKey: " + netmeraSdkKey + " popupPresentationDisabled: " + mPopupDisabled + " baseUrl: " + baseUrl, NetmeraPlugin.LogLevel.INFO);
     }
 
-    public static String getStringMetadata(Context context, String name) {
+    public static String getMetaData(Context context, String name) {
         try {
             ApplicationInfo appInfo = context.getPackageManager().getApplicationInfo(context.getPackageName(), PackageManager.GET_META_DATA);
             if (appInfo.metaData != null) {
-                String trimmed = appInfo.metaData.getString(name) != null ? appInfo.metaData.getString(name).trim() : null;
-                return trimmed != null && trimmed.length() > 0 ? trimmed : null;
+                // Get the value, trim it, and return null if it's empty
+                Object value = appInfo.metaData.get(name);
+                if (value != null) {
+                    String trimmed = value.toString().trim();
+                    return trimmed.isEmpty() ? null : trimmed;
+                } else {
+                    Log.i("Netmera", "Meta data not found for " + name);
+                }
             }
         } catch (PackageManager.NameNotFoundException e) {
-            return null;
+            // Log or handle exception if necessary
+            Log.e("Netmera", "Application info not found", e);
         }
         return null;
     }
 
-    public static float getFloatMetadata(Context context, String name) {
-        try {
-            ApplicationInfo appInfo = context.getPackageManager().getApplicationInfo(context.getPackageName(), PackageManager.GET_META_DATA);
-            if (appInfo.metaData != null) {
-                return appInfo.metaData.getFloat(name,0) ;
-            }
-        } catch (PackageManager.NameNotFoundException e) {
-            return 0;
-        }
-        return 0;
-    }
-
-    public static boolean getBoolMetadata(Context context, String name) {
-        try {
-            ApplicationInfo appInfo = context.getPackageManager().getApplicationInfo(context.getPackageName(), PackageManager.GET_META_DATA);
-            if (appInfo.metaData != null) {
-                return appInfo.metaData.getBoolean(name);
-            }
-        } catch (PackageManager.NameNotFoundException e) {
-            return false;
-        }
-        return false;
-    }
 }
