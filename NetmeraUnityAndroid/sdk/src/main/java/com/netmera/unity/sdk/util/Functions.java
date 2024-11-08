@@ -74,7 +74,9 @@ public class Functions {
 
 
     public static void log(String message, NetmeraPlugin.LogLevel logLevel) {
-        if(NetmeraCustomApp.getInstance() == null || NetmeraCustomApp.getBoolMetadata(NetmeraCustomApp.getInstance(), "netmera_logging_disabled")) {
+        boolean mIsLoggingEnabled = !Boolean.parseBoolean(NetmeraCustomApp.getMetaData(NetmeraCustomApp.getInstance(), "netmera_logging_disabled"));
+
+        if(NetmeraCustomApp.getInstance() == null || !mIsLoggingEnabled) {
             return;
         }
         message = "NETMERA Android log: " + message;

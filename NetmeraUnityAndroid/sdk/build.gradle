@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    compileSdkVersion 33
+    compileSdkVersion 34
 
     defaultConfig {
         minSdkVersion 21
-        targetSdkVersion 33
+        targetSdkVersion 34
         versionCode 1
         versionName "1.0"
 
@@ -29,9 +29,9 @@ android {
 
 
 dependencies {
-    implementation 'com.netmera:nmcore:3.13.0-noads'
-    implementation 'com.netmera:nmfcm:3.13.0-noads'
-    implementation 'com.netmera:nmhms:3.13.0-noads'
+    implementation 'com.netmera:nmcore:3.15.3-noads'
+    implementation 'com.netmera:nmfcm:3.13.1-noads'
+    implementation 'com.netmera:nmhms:3.12.1-noads'
     implementation 'androidx.core:core:1.1.0'
     implementation 'com.huawei.agconnect:agconnect-core:1.5.2.300'
 }
