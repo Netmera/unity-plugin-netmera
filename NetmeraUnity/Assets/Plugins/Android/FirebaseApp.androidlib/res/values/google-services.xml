@@ -1,10 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
-<resources xmlns:tools="http://schemas.android.com/tools" tools:keep="@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id,@string/default_web_client_id">
-  <string name="gcm_defaultSenderId" translatable="false">675460424491</string>
-  <string name="google_storage_bucket" translatable="false">netmeracrossplatforms.appspot.com</string>
-  <string name="project_id" translatable="false">netmeracrossplatforms</string>
-  <string name="google_api_key" translatable="false">AIzaSyByWFgPVutnGL8TzowVMZrjDnb9WjPOsPw</string>
-  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyByWFgPVutnGL8TzowVMZrjDnb9WjPOsPw</string>
-  <string name="google_app_id" translatable="false">1:675460424491:android:fb24000b2cd8e14b281b6e</string>
-  <string name="default_web_client_id" translatable="false">675460424491-lauodsmmbocrss4es084dcq79lt953k0.apps.googleusercontent.com</string>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:keep="@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id">
+  <string name="gcm_defaultSenderId" translatable="false">143231547982</string>
+  <string name="google_storage_bucket" translatable="false">netmera-cross-sdk.firebasestorage.app</string>
+  <string name="project_id" translatable="false">netmera-cross-sdk</string>
+  <string name="google_api_key" translatable="false">AIzaSyDVzrMZGw3vBkR0HFiPuIPecDXeZPtJDek</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDVzrMZGw3vBkR0HFiPuIPecDXeZPtJDek</string>
+  <string name="google_app_id" translatable="false">1:143231547982:android:2d80cdc4d2bfacc61fa11f</string>
 </resources>
