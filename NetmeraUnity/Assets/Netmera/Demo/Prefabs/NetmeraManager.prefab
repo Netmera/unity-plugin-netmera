@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fcmSenderId: 675460424491
-  netmeraSdkKey: FolJgBCBQJRAbEO42Dit77FBlTxmZ9mQIgcjbioswAiNnVj6dMMAeV3hacxNNpeL
+  netmeraSdkKey: GssT_cQQM8ex7M47znsmOuGAa4zUg17sFD8-W2mBzA7rtg9xDlPiFA
   loggingEnabled: 1
   popupPresentationEnabled: 0
   baseUrl: 

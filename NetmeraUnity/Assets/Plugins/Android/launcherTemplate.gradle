@@ -1,0 +1,83 @@
+apply plugin: 'com.android.application'
+apply from: 'setupSymbols.gradle'
+apply from: '../shared/keepUnitySymbols.gradle'
+apply from: '../shared/common.gradle'
+
+dependencies {
+    implementation project(':unityLibrary')
+}
+
+android {
+    namespace "**NAMESPACE**"
+    ndkPath "**NDKPATH**"
+    ndkVersion "**NDKVERSION**"
+    compileSdk **APIVERSION**
+    buildToolsVersion '**BUILDTOOLS**'
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    defaultConfig {
+        applicationId "**APPLICATIONID**"
+        versionName '**VERSIONNAME**'
+        minSdk **MINSDK**
+        targetSdk **TARGETSDK**
+        versionCode **VERSIONCODE**
+
+        ndk {
+            abiFilters **ABIFILTERS**
+            debugSymbolLevel **DEBUGSYMBOLLEVEL**
+        }
+    }
+
+    lint {
+        abortOnError false
+    }
+
+    androidResources {
+        ignoreAssetsPattern = "!.svn:!.git:!.ds_store:!*.scc:!CVS:!thumbs.db:!picasa.ini:!*~"
+        noCompress = **BUILTIN_NOCOMPRESS** + unityStreamingAssets.tokenize(', ')
+    }
+
+    packaging {
+        jniLibs {
+            useLegacyPackaging true
+        }
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled **DEBUG_MINIFY_ENABLED**
+            proguardFiles getDefaultProguardFile('proguard-android.txt')
+            jniDebuggable = true
+            signingConfig signingConfigs.debug
+        }
+
+        release {
+            minifyEnabled **RELEASE_MINIFY_ENABLED**
+            proguardFiles getDefaultProguardFile('proguard-android.txt')
+            signingConfig signingConfigs.debug
+        }
+    }
+
+    bundle {
+        language {
+            enableSplit = false
+        }
+
+        density {
+            enableSplit = false
+        }
+
+        abi {
+            enableSplit = true
+        }
+
+        texture {
+            enableSplit = true
+        }
+    }
+}
+

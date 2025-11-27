@@ -13,14 +13,9 @@
     <package>com.netmera:nmfcm:3.13.1-noads</package>
     <package>com.netmera:nmhms:3.12.1-noads</package>
   </packages>
-  <files>
-    <file>Assets/GeneratedLocalRepo/Firebase/m2repository/com/google/firebase/firebase-app-unity/10.0.0/firebase-app-unity-10.0.0.aar</file>
-    <file>Assets/GeneratedLocalRepo/Firebase/m2repository/com/google/firebase/firebase-app-unity/10.0.0/firebase-app-unity-10.0.0.pom</file>
-    <file>Assets/GeneratedLocalRepo/Firebase/m2repository/com/google/firebase/firebase-messaging-unity/10.0.0/firebase-messaging-unity-10.0.0.aar</file>
-    <file>Assets/GeneratedLocalRepo/Firebase/m2repository/com/google/firebase/firebase-messaging-unity/10.0.0/firebase-messaging-unity-10.0.0.pom</file>
-  </files>
+  <files />
   <settings>
-    <setting name="androidAbis" value="armeabi-v7a" />
+    <setting name="androidAbis" value="arm64-v8a,armeabi-v7a" />
     <setting name="bundleId" value="com.netmera.unity.plugin" />
     <setting name="explodeAars" value="True" />
     <setting name="gradleBuildEnabled" value="True" />
