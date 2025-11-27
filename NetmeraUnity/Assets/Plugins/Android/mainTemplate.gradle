@@ -41,15 +41,24 @@ dependencies {
     implementation 'com.google.firebase:firebase-iid:21.1.0' // Assets/Firebase/Editor/MessagingDependencies.xml:17
     implementation 'com.google.firebase:firebase-messaging:23.1.0' // Assets/Firebase/Editor/MessagingDependencies.xml:13
     implementation 'com.huawei.agconnect:agconnect-core:1.5.2.300' // Assets/Netmera/Editor/NetmeraDependencies.xml:19
-    implementation 'com.netmera:nmcore:3.15.3-noads' // Assets/Netmera/Editor/NetmeraDependencies.xml:15
-    implementation 'com.netmera:nmfcm:3.13.1-noads' // Assets/Netmera/Editor/NetmeraDependencies.xml:16
-    implementation 'com.netmera:nmhms:3.12.1-noads' // Assets/Netmera/Editor/NetmeraDependencies.xml:17
+    implementation 'com.netmera:nmcore:4.11.0-noads' // Assets/Netmera/Editor/NetmeraDependencies.xml:15
+    implementation 'com.netmera:nmfcm:4.11.0-noads' // Assets/Netmera/Editor/NetmeraDependencies.xml:16
+    implementation 'com.netmera:nmhms:4.11.0-noads' // Assets/Netmera/Editor/NetmeraDependencies.xml:17
 // Android Resolver Dependencies End
 
 **DEPS**
 }
 
 // Android Resolver Exclusions Start
+android {
+  packaging {
+      exclude ('/lib/armeabi/*' + '*')
+      exclude ('/lib/mips/*' + '*')
+      exclude ('/lib/mips64/*' + '*')
+      exclude ('/lib/x86/*' + '*')
+      exclude ('/lib/x86_64/*' + '*')
+  }
+}
 // Android Resolver Exclusions End
 android {
     ndkVersion "**NDKVERSION**"
