@@ -5,7 +5,7 @@ namespace Netmera
 {
     public abstract class NetmeraCore
     {
-        public static readonly string SdkVersion = "1.0.0";
+        public static readonly string SdkVersion = "1.3.0";
         protected static readonly object classLock = new object();
         private static volatile NetmeraCore _instance;
         public bool LoggingEnabled;
