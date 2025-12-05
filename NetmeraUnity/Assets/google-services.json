@@ -1,36 +1,26 @@
 {
   "project_info": {
-    "project_number": "675460424491",
-    "project_id": "netmeracrossplatforms",
-    "storage_bucket": "netmeracrossplatforms.appspot.com"
+    "project_number": "143231547982",
+    "project_id": "netmera-cross-sdk",
+    "storage_bucket": "netmera-cross-sdk.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:675460424491:android:fb24000b2cd8e14b281b6e",
+        "mobilesdk_app_id": "1:143231547982:android:2d80cdc4d2bfacc61fa11f",
         "android_client_info": {
           "package_name": "com.netmera.unity.plugin"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "675460424491-lauodsmmbocrss4es084dcq79lt953k0.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyByWFgPVutnGL8TzowVMZrjDnb9WjPOsPw"
+          "current_key": "AIzaSyDVzrMZGw3vBkR0HFiPuIPecDXeZPtJDek"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "675460424491-lauodsmmbocrss4es084dcq79lt953k0.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }

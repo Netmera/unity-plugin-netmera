@@ -25,9 +25,7 @@ dependencyResolutionManagement {
         maven {
             url "https://developer.huawei.com/repo" // Assets/Netmera/Editor/NetmeraDependencies.xml:27
         }
-        maven {
-            url (unityProjectPath + "/Assets/GeneratedLocalRepo/Firebase/m2repository")
-        }
+        // Firebase local repository removed - Firebase Unity packages not compatible with Unity 6.2
         mavenLocal()
 // Android Resolver Repos End
         google()

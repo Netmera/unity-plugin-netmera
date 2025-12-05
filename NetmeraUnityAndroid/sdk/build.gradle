@@ -29,11 +29,14 @@ android {
 
 
 dependencies {
-    implementation 'com.netmera:nmcore:3.15.3-noads'
-    implementation 'com.netmera:nmfcm:3.13.1-noads'
-    implementation 'com.netmera:nmhms:3.12.1-noads'
+    implementation 'com.netmera:nmcore:4.11.0-noads'
+    implementation 'com.netmera:nmfcm:4.11.0-noads'
+    implementation 'com.netmera:nmhms:4.11.0-noads'
     implementation 'androidx.core:core:1.1.0'
     implementation 'com.huawei.agconnect:agconnect-core:1.5.2.300'
+
+    implementation 'com.google.firebase:firebase-messaging:23.1.2'
+    implementation 'com.huawei.hms:push:6.11.0.300'
 }
 
 apply plugin: "com.huawei.agconnect"

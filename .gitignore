@@ -7,3 +7,14 @@ NetmeraUnity/Temp
 NetmeraUnity/Assets/Netmera-Info.plist.meta
 NetmeraUnity/Assets/Netmera-Info.plist
 NetmeraUnity/Assets/Firebase/**
+NetmeraUnity/.vscode/**
+NetmeraUnity/.utmp/**
+
+*.backup
+*.backup.meta
+
+# Unity 6.2 solution file
+NetmeraUnity/*.slnx
+
+# Unity user-specific layout files
+NetmeraUnity/UserSettings/Layouts/default-*.dwlt

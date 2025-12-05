@@ -18,7 +18,7 @@
     
     <application android:name="com.netmera.unity.sdk.core.NetmeraCustomApp">
 
-        <activity android:name="com.google.firebase.MessagingUnityPlayerActivity"
+        <activity android:name="com.unity3d.player.UnityPlayerActivity"
                   android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -27,10 +27,10 @@
             <meta-data android:name="unityplayer.UnityActivity" android:value="true"/>
         </activity>
         
-        <service android:name="com.google.firebase.messaging.MessageForwardingService" android:exported="false"/>
+        <!-- MessageForwardingService removed - Firebase Unity package not compatible with Unity 6.2 -->
          <meta-data
                 android:name="netmera_mobile_sdkkey"
-                android:value="FolJgBCBQJRAbEO42Dit77FBlTxmZ9mQIgcjbioswAiNnVj6dMMAeV3hacxNNpeL"/>
+                android:value="GssT_cQQM8ex7M47znsmOuGAa4zUg17sFD8-W2mBzA7rtg9xDlPiFA"/>
         <meta-data
                 android:name="netmera_firebase_senderid"
                 android:value="675460424491"/>

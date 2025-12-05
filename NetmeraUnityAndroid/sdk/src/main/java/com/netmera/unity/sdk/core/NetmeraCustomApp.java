@@ -7,8 +7,11 @@ import android.content.pm.PackageManager;
 import android.util.Log;
 
 import com.google.firebase.messaging.FirebaseMessaging;
+import com.netmera.NMActivityLifecycleCallbacks;
 import com.netmera.Netmera;
 import com.netmera.NetmeraConfiguration;
+import com.netmera.nmfcm.NMFCMProvider;
+import com.netmera.nmhms.NMHMSProvider;
 import com.netmera.unity.sdk.util.Functions;
 
 public class NetmeraCustomApp extends Application {
@@ -41,12 +44,16 @@ public class NetmeraCustomApp extends Application {
         NetmeraConfiguration.Builder netmeraConfiguration = new NetmeraConfiguration.Builder()
                 .firebaseSenderId(firebaseSenderId)
                 .apiKey(netmeraSdkKey)
+                .addProvider(new NMFCMProvider())
                 .nmPushActionCallbacks(new NetmeraPluginPushReceiver())
                 .logging(mIsLoggingEnabled);
 
         if (huaweiSenderId != null && !huaweiSenderId.isEmpty()) {
             netmeraConfiguration.huaweiSenderId(huaweiSenderId);
+            netmeraConfiguration.addProvider(new NMHMSProvider());
         }
+
+        app.registerActivityLifecycleCallbacks(new NMActivityLifecycleCallbacks(app));
 
         NetmeraPlugin.mIsInitialized = true;
         Netmera.init(netmeraConfiguration.build(context));
